@@ -1,0 +1,45 @@
+html {
+	-webkit-tap-highlight-color: transparent !important;
+	font-size: 16px;
+
+	@include min-tablet {
+		font-size: 1.3vw;
+	}
+	@include min-laptop {
+		font-size: 0.833vw;
+	}
+}
+
+body {
+	position: relative;
+	margin: auto;
+	font-family: 'Roboto', 'Arial', sans-serif;
+	font-size: r(18);
+	line-height: 1.75;
+	color: $textColor;
+}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 r(12);
+
+	&__test {
+	  padding: 0 r(12);
+	}
+}
+
+.main-menu {
+	display: flex;
+	list-style: none;
+}
+
+a {
+	color: $textColor;
+}
+
+.icon {
+	fill: currentColor;
+	stroke: currentColor;
+}

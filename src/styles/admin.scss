@@ -1,0 +1,26 @@
+//CSS file for WP admin
+.wp-block-post-content {
+	@import 'common';
+	@import 'page/home';
+	@import 'page/blog';
+}
+
+.wp-block {
+	max-width: 1440px;
+	margin-top:28px;
+	margin-bottom:28px;
+}
+
+.acf-block-component .acf-block-fields,
+.acf-block-component .components-placeholder {
+	padding-top: 40px!important;
+}
+
+.wp-block.acf-block-component:not(.acf-block-preview)::before {
+	position: absolute;
+	top: 8px;
+	left: 20px;
+	z-index: 9;
+	content: attr(data-title);
+}
+

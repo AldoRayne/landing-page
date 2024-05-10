@@ -1,0 +1,11 @@
+@import "common/root";
+@import "common/variable";
+@import "common/mixins";
+@import "common/reset";
+@import "common/base";
+@import "common/fonts";
+
+// example for bg img
+body {
+  background-image: url("/assets/img/cloud-fog-svgrepo-com.svg");
+}

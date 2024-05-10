@@ -1,0 +1,107 @@
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/admin.scss ***!
+  \******************************************************************************************************************************************************************************************************************/
+.wp-block-post-content {
+  /*images*/
+  /*images*/ }
+  .wp-block-post-content :root {
+    --color-primary: #235ad1;
+    --color-text: #000;
+    --color-hover: #061e2f; }
+  .wp-block-post-content * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box; }
+  .wp-block-post-content :before, .wp-block-post-content :after {
+    box-sizing: border-box; }
+  .wp-block-post-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all .3s; }
+  .wp-block-post-content input, .wp-block-post-content textarea {
+    outline: none; }
+    .wp-block-post-content input:focus, .wp-block-post-content textarea:focus {
+      outline: none; }
+    .wp-block-post-content input:-webkit-autofill, .wp-block-post-content input:-webkit-autofill:hover, .wp-block-post-content input:-webkit-autofill:focus, .wp-block-post-content textarea:-webkit-autofill, .wp-block-post-content textarea:-webkit-autofill:hover, .wp-block-post-content textarea:-webkit-autofill:focus {
+      -webkit-text-fill-color: #fff;
+      -webkit-box-shadow: 0 0 0 1000px transparent inset;
+      -webkit-transition: background-color 5000s ease-in-out 0s;
+      transition: background-color 5000s ease-in-out 0s;
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 100%);
+      color: #fff; }
+  .wp-block-post-content img, .wp-block-post-content svg, .wp-block-post-content video {
+    max-width: 100%;
+    height: auto; }
+  .wp-block-post-content input[type=button], .wp-block-post-content input[type=submit], .wp-block-post-content input[type=reset], .wp-block-post-content button {
+    cursor: pointer; }
+  .wp-block-post-content picture {
+    display: block; }
+  .wp-block-post-content iframe {
+    max-width: 100%; }
+  .wp-block-post-content input, .wp-block-post-content select, .wp-block-post-content textarea, .wp-block-post-content button {
+    font-family: 'Roboto', 'Arial', sans-serif; }
+  .wp-block-post-content textarea:focus-visible {
+    outline: 0; }
+  .wp-block-post-content html {
+    -webkit-tap-highlight-color: transparent !important;
+    font-size: 16px; }
+    @media only screen and (min-width: 768px) {
+      .wp-block-post-content html {
+        font-size: 1.3vw; } }
+    @media only screen and (min-width: 1200px) {
+      .wp-block-post-content html {
+        font-size: 0.833vw; } }
+  .wp-block-post-content body {
+    position: relative;
+    margin: auto;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--color-text); }
+  .wp-block-post-content .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0.75rem; }
+    .wp-block-post-content .container__test {
+      padding: 0 0.75rem; }
+  .wp-block-post-content .main-menu {
+    display: flex;
+    list-style: none; }
+  .wp-block-post-content a {
+    color: var(--color-text); }
+  .wp-block-post-content .icon {
+    fill: currentColor;
+    stroke: currentColor; }
+
+@font-face {
+  .wp-block-post-content {
+    font-family: "Roboto";
+    src: url(../.././assets/fonts/RobotoBold.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap; } }
+  .wp-block-post-content body {
+    background-image: url(../../a99ddaf2ed20ca54712a.svg); }
+  .wp-block-post-content .blog {
+    color: green; }
+
+.wp-block {
+  max-width: 1440px;
+  margin-top: 28px;
+  margin-bottom: 28px; }
+
+.acf-block-component .acf-block-fields,
+.acf-block-component .components-placeholder {
+  padding-top: 40px !important; }
+
+.wp-block.acf-block-component:not(.acf-block-preview)::before {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  z-index: 9;
+  content: attr(data-title); }
+
+
+/*# sourceMappingURL=admin.css.map*/
