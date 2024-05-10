@@ -53,7 +53,6 @@ textarea:focus-visible {
   outline: 0; }
 
 html {
-  -webkit-tap-highlight-color: transparent !important;
   font-size: 16px; }
   @media only screen and (min-width: 768px) {
     html {
@@ -62,32 +61,8 @@ html {
     html {
       font-size: 0.833vw; } }
 
-body {
-  position: relative;
-  margin: auto;
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.75;
-  color: var(--color-text); }
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 0.75rem; }
-  .container__test {
-    padding: 0 0.75rem; }
-
-.main-menu {
-  display: flex;
-  list-style: none; }
-
-a {
-  color: var(--color-text); }
-
-.icon {
-  fill: currentColor;
-  stroke: currentColor; }
+body.overflow-hidden {
+  overflow: hidden; }
 
 @font-face {
   font-family: "Roboto";
