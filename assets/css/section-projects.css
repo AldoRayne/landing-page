@@ -2,7 +2,34 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/section/projects.scss ***!
   \*****************************************************************************************************************************************************************************************************************************/
 /*images*/
+.projects__row {
+  display: grid;
+  grid-template-columns: 40rem 26rem;
+  -webkit-column-gap: 16rem;
+  -moz-column-gap: 16rem;
+  column-gap: 16rem; }
+  .projects__row:not(:last-child) {
+    margin-bottom: 4.25rem; }
+  .projects__row:nth-child(even) {
+    grid-template-columns: 26rem 40rem;
+    grid-auto-flow: dense; }
+    .projects__row:nth-child(even) .projects__item:first-child {
+      -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+      order: 2; }
+    .projects__row:nth-child(even) .projects__item:last-child {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1; }
+
+.projects__content {
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+  opacity: 0; }
+
 .projects__image-wrapper {
+  margin-bottom: 1.5rem;
   max-width: 40rem;
   max-height: 40rem;
   width: 100%;
@@ -18,6 +45,9 @@
       opacity: 0; }
       .projects__image-wrapper:active .projects__image_hover {
         opacity: 1; } }
+  .projects__image-wrapper_small {
+    max-width: 26rem;
+    max-height: 26rem; }
 
 .projects__image {
   width: 100%;
