@@ -30,7 +30,8 @@ window.addEventListener("DOMContentLoaded", function () {
         onComplete: function onComplete() {
           gsap.to(content, {
             y: 0,
-            opacity: 1
+            opacity: 1,
+            stagger: 0.3
           });
         }
       });
