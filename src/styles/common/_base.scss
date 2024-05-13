@@ -11,6 +11,7 @@ html {
 
 body {
   color: $textColor;
+  line-height: r(24);
   background-color: $primaryColor;
 
   &.overflow-hidden {
@@ -22,4 +23,17 @@ body {
   margin: 0 auto;
   max-width: r(1312);
   width: 100%;
+}
+
+h2,
+.h2-title {
+  margin-bottom: r(40);
+  font-size: r(64);
+  line-height: r(72);
+}
+
+.h2-title {
+  &_small-indent {
+    margin-bottom: r(32);
+  }
 }

@@ -5,13 +5,17 @@
   padding: r(168) 0 r(88);
 
   &__text {
-    font-size: r(64);
-    line-height: r(72);
-
     span {
       display: inline-block;
       transform: translateY(50%);
       opacity: 0;
     }
+  }
+
+  &__description {
+    margin-left: auto;
+    max-width: r(416);
+    color: $greyColor;
+
   }
 }

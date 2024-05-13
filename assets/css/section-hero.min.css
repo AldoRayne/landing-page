@@ -1,1 +1,1 @@
-.hero{padding:10.5rem 0 5.5rem}.hero__text{font-size:4rem;line-height:4.5rem}.hero__text span{display:inline-block;opacity:0;-webkit-transform:translateY(50%);-ms-transform:translateY(50%);transform:translateY(50%)}
+.hero{padding:10.5rem 0 5.5rem}.hero__text span{display:inline-block;opacity:0;-webkit-transform:translateY(50%);-ms-transform:translateY(50%);transform:translateY(50%)}.hero__description{color:var(--color-grey);margin-left:auto;max-width:26rem}

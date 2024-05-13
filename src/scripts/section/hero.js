@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
         words.forEach((word) => {
             const span = document.createElement("span");
             span.textContent = word;
-            
+
             text.append(span);
             text.innerHTML += " ";
         });
@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
         y: 0,
         opacity: 1,
         duration: 0.5,
-        // delay: 3,
+        delay: 4,
         stagger: 0.1,
     });
 });

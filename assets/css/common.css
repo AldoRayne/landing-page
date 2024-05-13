@@ -3,7 +3,8 @@
   \*******************************************************************************************************************************************************************************************************************/
 :root {
   --color-primary: #000;
-  --color-text: #fff; }
+  --color-text: #fff;
+  --color-grey: #b8bec8; }
 
 /*images*/
 * {
@@ -56,6 +57,7 @@ html {
 
 body {
   color: var(--color-text);
+  line-height: 1.5rem;
   background-color: var(--color-primary); }
   body.overflow-hidden {
     overflow: hidden; }
@@ -64,6 +66,15 @@ body {
   margin: 0 auto;
   max-width: 82rem;
   width: 100%; }
+
+h2,
+.h2-title {
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
+  line-height: 4.5rem; }
+
+.h2-title_small-indent {
+  margin-bottom: 2rem; }
 
 @font-face {
   font-family: "Roboto";

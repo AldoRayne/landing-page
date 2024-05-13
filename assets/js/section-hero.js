@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {
     y: 0,
     opacity: 1,
     duration: 0.5,
-    // delay: 3,
+    delay: 4,
     stagger: 0.1
   });
 });
