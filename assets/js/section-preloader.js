@@ -24,7 +24,8 @@ window.addEventListener("DOMContentLoaded", function () {
     preloaderInner.append(imgElement);
   });
   gsap.timeline().to(".js-preloader__inner", {
-    opacity: 1
+    opacity: 1,
+    delay: 0.1
   }).to(".js-preloader__image", {
     y: 0,
     stagger: 0.1

@@ -5,9 +5,8 @@
   /*images*/
   /*images*/ }
   .wp-block-post-content :root {
-    --color-primary: #235ad1;
-    --color-text: #000;
-    --color-hover: #061e2f; }
+    --color-primary: #000;
+    --color-text: #fff; }
   .wp-block-post-content * {
     margin: 0;
     padding: 0;
@@ -45,14 +44,15 @@
     outline: 0; }
   .wp-block-post-content html {
     font-size: 16px; }
-    @media only screen and (min-width: 768px) {
-      .wp-block-post-content html {
-        font-size: 1.3vw; } }
-    @media only screen and (min-width: 1200px) {
-      .wp-block-post-content html {
-        font-size: 0.833vw; } }
-  .wp-block-post-content body.overflow-hidden {
-    overflow: hidden; }
+  .wp-block-post-content body {
+    color: var(--color-text);
+    background-color: var(--color-primary); }
+    .wp-block-post-content body.overflow-hidden {
+      overflow: hidden; }
+  .wp-block-post-content .container {
+    margin: 0 auto;
+    max-width: 82rem;
+    width: 100%; }
 
 @font-face {
   .wp-block-post-content {
@@ -61,6 +61,15 @@
     font-weight: 700;
     font-style: normal;
     font-display: swap; } }
+  .wp-block-post-content .hero {
+    padding: 10.5rem 0 5.5rem; }
+    .wp-block-post-content .hero__text {
+      font-size: 4rem;
+      line-height: 4.5rem; }
+      .wp-block-post-content .hero__text span {
+        display: inline-block;
+        transform: translateY(50%);
+        opacity: 0; }
   .wp-block-post-content .blog {
     color: green; }
 

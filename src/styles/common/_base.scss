@@ -1,18 +1,25 @@
 html {
-  font-size: 16px;
+  font-size: $fontSizeBase;
 
-  @include min-tablet {
-    font-size: 1.3vw;
-  }
-  @include min-laptop {
-    font-size: 0.833vw;
-  }
+  // @include min-tablet {
+  //   font-size: 1.3vw;
+  // }
+  // @include min-laptop {
+  //   font-size: 0.833vw;
+  // }
 }
 
 body {
-  // background-color: #000;
+  color: $textColor;
+  background-color: $primaryColor;
 
   &.overflow-hidden {
     overflow: hidden;
   }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: r(1312);
+  width: 100%;
 }
