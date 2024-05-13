@@ -57,6 +57,9 @@ input, select, textarea, button {
 textarea:focus-visible {
   outline: 0; }
 
+* {
+  cursor: none; }
+
 html {
   font-size: 1.111vw; }
   @media only screen and (max-width: 375px) {
@@ -67,8 +70,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-light);
   line-height: 1.5rem;
-  background-color: var(--color-primary);
-  cursor: none; }
+  background-color: var(--color-primary); }
   body.overflow-hidden {
     overflow: hidden; }
 
