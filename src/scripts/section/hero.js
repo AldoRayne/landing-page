@@ -21,10 +21,14 @@ window.addEventListener("DOMContentLoaded", async () => {
             });
         });
 
+        gsap.set(".js-hero-text", {
+            opacity: 1,
+        });
+
         await globalTl.to(".js-hero-text span", {
             y: 0,
             opacity: 1,
-            duration: 0.5,
+            duration: 0.4,
             stagger: 0.1,
         });
     }

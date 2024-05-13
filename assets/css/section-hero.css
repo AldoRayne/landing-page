@@ -4,12 +4,14 @@
 /*images*/
 .hero {
   padding: 10.5rem 0 5.5rem; }
-  .hero__text span {
-    display: inline-block;
-    -webkit-transform: translateY(50%);
-    -ms-transform: translateY(50%);
-    transform: translateY(50%);
+  .hero__text {
     opacity: 0; }
+    .hero__text span {
+      display: inline-block;
+      -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+      transform: translateY(50%);
+      opacity: 0; }
   .hero__heading {
     max-width: 65.625rem; }
   .hero__description {

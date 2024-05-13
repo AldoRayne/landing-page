@@ -1,0 +1,21 @@
+@import "../common/variable";
+@import "../common/mixins";
+
+.tags {
+  margin: 0 r(-4);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+
+  &__item {
+    margin: 0 r(4) r(4);
+    padding: r(8) r(12);
+    color: $textColor;
+    font-size: r(12);
+    font-family: $mediumFont;
+    font-weight: 500;
+    line-height: r(20);  
+    background-color: $greyDarkColor;
+    border-radius: r(40);
+  }
+}
