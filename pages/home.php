@@ -30,7 +30,7 @@
 	<script src="../assets/js/section-preloader.min.js"></script>
 	<script src="../assets/js/section-hero.min.js"></script>
 	<script src="../assets/js/section-projects.min.js"></script>
-	<script src="../assets/js/section-brands.js"></script>
+	<script src="../assets/js/section-brands.min.js"></script>
 </body>
 
 </html>
