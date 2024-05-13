@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", /*#__PURE__*/_asyncToGenerator( /*#_
                   return globalTl.to(".js-hero-text span", {
                     y: 0,
                     opacity: 1,
-                    duration: 0.5,
+                    duration: 0.4,
                     stagger: 0.1
                   });
                 case 7:

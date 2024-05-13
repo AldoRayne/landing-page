@@ -26,10 +26,10 @@ window.addEventListener("DOMContentLoaded", async () => {
         });
 
         await globalTl.to(".js-hero-text span", {
-                y: 0,
-                opacity: 1,
-                duration: 0.5,
-                stagger: 0.1,
-            });
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            stagger: 0.1,
+        });
     }
 });
