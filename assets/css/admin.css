@@ -79,8 +79,11 @@
       display: inline-block;
       transform: translateY(50%);
       opacity: 0; }
+    .wp-block-post-content .hero__heading {
+      max-width: 65.625rem; }
     .wp-block-post-content .hero__description {
       margin-left: auto;
+      padding-right: 5.125rem;
       max-width: 26rem;
       color: var(--color-grey);
       font-weight: 300; }

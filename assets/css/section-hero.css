@@ -10,8 +10,11 @@
     -ms-transform: translateY(50%);
     transform: translateY(50%);
     opacity: 0; }
+  .hero__heading {
+    max-width: 65.625rem; }
   .hero__description {
     margin-left: auto;
+    padding-right: 5.125rem;
     max-width: 26rem;
     color: var(--color-grey);
     font-weight: 300; }
