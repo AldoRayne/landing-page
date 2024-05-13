@@ -43,17 +43,22 @@ h2,
   }
 }
 
-h3, .h4-title {
-  margin-bottom: r(4);
-  color: $greyColor;
-  font-size: r(12);
-  font-weight: 300;
-  line-height: r(20);
+h3, .h3-title {
+  margin-bottom: r(56);
+  font-size: r(40);
+  font-family: $regularFont;
+  font-weight: 400;
+  line-height: r(48);
 }
 
 h4, .h4-title {
+  margin-bottom: r(56);
   font-size: r(24);
   font-family: $regularFont;
   font-weight: 400;
   line-height: r(36);
+}
+
+.text-center {
+  text-align: center;
 }

@@ -2,7 +2,7 @@
 @import "../common/mixins";
 
 .tags {
-  margin: 0 r(-4);
+  margin: 0 r(-4) r(-4);
   display: flex;
   flex-wrap: wrap;
   list-style: none;
