@@ -36,7 +36,10 @@ window.addEventListener("DOMContentLoaded", /*#__PURE__*/_asyncToGenerator( /*#_
                     });
                   });
                   _context.next = 6;
-                  return globalTl.to(".js-hero-text span", {
+                  return globalTl.to(".js-hero-text", {
+                    opacity: 1,
+                    duration: 0
+                  }).to(".js-hero-text span", {
                     y: 0,
                     opacity: 1,
                     duration: 0.5,
