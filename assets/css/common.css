@@ -4,7 +4,8 @@
 :root {
   --color-primary: #000;
   --color-text: #fff;
-  --color-grey: #b8bec8; }
+  --color-grey: #b8bec8;
+  --font-light: "EpilogueLight", sans-serif; }
 
 /*images*/
 * {
@@ -57,6 +58,7 @@ html {
 
 body {
   color: var(--color-text);
+  font-family: var(--font-light);
   line-height: 1.5rem;
   background-color: var(--color-primary); }
   body.overflow-hidden {
@@ -71,15 +73,16 @@ h2,
 .h2-title {
   margin-bottom: 2.5rem;
   font-size: 4rem;
+  font-weight: 300;
   line-height: 4.5rem; }
 
 .h2-title_small-indent {
   margin-bottom: 2rem; }
 
 @font-face {
-  font-family: "Roboto";
-  src: url(../.././assets/fonts/RobotoBold.woff) format("woff");
-  font-weight: 700;
+  font-family: "EpilogueLight";
+  src: url(../.././assets/fonts/Epilogue-Light.ttf) format("ttf");
+  font-weight: 300;
   font-style: normal;
   font-display: swap; }
 

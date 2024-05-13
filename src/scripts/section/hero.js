@@ -16,11 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    gsap.timeline().to(".js-hero-text span", {
+    globalTl.to(".js-hero-text span", {
         y: 0,
         opacity: 1,
         duration: 0.5,
-        delay: 4,
         stagger: 0.1,
     });
 });

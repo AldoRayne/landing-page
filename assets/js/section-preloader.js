@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", function () {
     imgElement.classList.add("preloader__image", "js-preloader__image");
     preloaderInner.append(imgElement);
   });
-  gsap.timeline().to(".js-preloader__inner", {
+  globalTl.to(".js-preloader__inner", {
     opacity: 1,
     delay: 0.1
   }).to(".js-preloader__image", {

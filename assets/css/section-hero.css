@@ -13,7 +13,8 @@
   .hero__description {
     margin-left: auto;
     max-width: 26rem;
-    color: var(--color-grey); }
+    color: var(--color-grey);
+    font-weight: 300; }
 
 
 /*# sourceMappingURL=section-hero.css.map*/

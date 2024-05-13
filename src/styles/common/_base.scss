@@ -11,6 +11,7 @@ html {
 
 body {
   color: $textColor;
+  font-family: $lightFont;
   line-height: r(24);
   background-color: $primaryColor;
 
@@ -29,6 +30,7 @@ h2,
 .h2-title {
   margin-bottom: r(40);
   font-size: r(64);
+  font-weight: 300;
   line-height: r(72);
 }
 
