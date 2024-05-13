@@ -11,6 +11,8 @@ window.addEventListener("DOMContentLoaded", () => {
         function customCursor() {
             const cursor = document.querySelector(".js-cursor");
 
+            if (!cursor) return;
+
             document.addEventListener("mousemove", (event) => {
                 cursor.style.left = `${event.clientX}px`;
                 cursor.style.top = `${event.clientY}px`;
