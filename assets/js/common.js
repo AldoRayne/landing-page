@@ -16,8 +16,8 @@ window.addEventListener("DOMContentLoaded", function () {
       var cursor = document.querySelector(".js-cursor");
       if (!cursor) return;
       document.addEventListener("mousemove", function (event) {
-        cursor.style.left = "".concat(event.clientX, "px");
-        cursor.style.top = "".concat(event.clientY, "px");
+        cursor.style.left = "".concat(event.clientX - 7, "px");
+        cursor.style.top = "".concat(event.clientY - 7, "px");
       });
     }
 

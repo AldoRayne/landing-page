@@ -14,8 +14,8 @@ window.addEventListener("DOMContentLoaded", () => {
             if (!cursor) return;
 
             document.addEventListener("mousemove", (event) => {
-                cursor.style.left = `${event.clientX}px`;
-                cursor.style.top = `${event.clientY}px`;
+                cursor.style.left = `${event.clientX - 7}px`;
+                cursor.style.top = `${event.clientY - 7}px`;
             });
         }
 
