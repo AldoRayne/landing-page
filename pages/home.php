@@ -22,6 +22,7 @@
 		<?php include('../components/sections/brands.php') ?>
 	</main>
 	<?php include('../components/footer/_footer.php') ?>
+	<?php include('../components/elements/_cursor.php') ?>
 	<?php include('../components/scripts/_scripts.php') ?>
 	<script>
 		/** Global gsap.timeline() value */

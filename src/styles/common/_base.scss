@@ -11,6 +11,7 @@ body {
   font-family: $lightFont;
   line-height: r(24);
   background-color: $primaryColor;
+  cursor: none;
 
   &.overflow-hidden {
     overflow: hidden;

@@ -8,9 +8,21 @@ window.addEventListener("DOMContentLoaded", function () {
     window.scrollTo(0, 0);
     document.querySelector("body").classList.add("overflow-hidden");
     gsap.registerPlugin(ScrollTrigger);
+    customCursor();
     headerShowing();
 
-    /** Header */
+    /** customCursor() init */
+    function customCursor() {
+      var cursor = document.querySelector(".js-cursor");
+      document.addEventListener("mousemove", function (event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        cursor.style.left = x + "px";
+        cursor.style.top = y + "px";
+      });
+    }
+
+    /** headerShowing() init */
     function headerShowing() {
       var header = document.querySelector(".js-header");
       if (!header) return;
