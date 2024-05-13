@@ -1,45 +1,44 @@
 html {
-	-webkit-tap-highlight-color: transparent !important;
-	font-size: 16px;
+  font-size: $fontSizeLg;
 
-	@include min-tablet {
-		font-size: 1.3vw;
-	}
-	@include min-laptop {
-		font-size: 0.833vw;
-	}
+  @include max-small {
+    font-size: $fontSizeBase;
+  }
 }
 
 body {
-	position: relative;
-	margin: auto;
-	font-family: 'Roboto', 'Arial', sans-serif;
-	font-size: r(18);
-	line-height: 1.75;
-	color: $textColor;
+  color: $textColor;
+  font-family: $lightFont;
+  line-height: r(24);
+  background-color: $primaryColor;
+
+  &.overflow-hidden {
+    overflow: hidden;
+  }
 }
 
 .container {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 r(12);
-
-	&__test {
-	  padding: 0 r(12);
-	}
+  margin: 0 auto;
+  padding: 0 r(24);
+  max-width: r(1360);
+  width: 100%;
 }
 
-.main-menu {
-	display: flex;
-	list-style: none;
+h2,
+.h2-title {
+  margin-bottom: r(40);
+  font-size: r(64);
+  font-weight: 300;
+  line-height: r(72);
+
+  @include max-small {
+    font-size: r(32);
+    line-height: r(40);
+  }
 }
 
-a {
-	color: $textColor;
-}
-
-.icon {
-	fill: currentColor;
-	stroke: currentColor;
+.h2-title {
+  &_small-indent {
+    margin-bottom: r(32);
+  }
 }

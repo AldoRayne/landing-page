@@ -2,9 +2,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/common.scss ***!
   \*******************************************************************************************************************************************************************************************************************/
 :root {
-  --color-primary: #235ad1;
-  --color-text: #000;
-  --color-hover: #061e2f; }
+  --color-primary: #000;
+  --color-text: #fff;
+  --color-grey: #b8bec8;
+  --font-light: "EpilogueLight", sans-serif; }
 
 /*images*/
 * {
@@ -53,46 +54,44 @@ textarea:focus-visible {
   outline: 0; }
 
 html {
-  -webkit-tap-highlight-color: transparent !important;
-  font-size: 16px; }
-  @media only screen and (min-width: 768px) {
+  font-size: 1.111vw; }
+  @media only screen and (max-width: 375px) {
     html {
-      font-size: 1.3vw; } }
-  @media only screen and (min-width: 1200px) {
-    html {
-      font-size: 0.833vw; } }
+      font-size: 16px; } }
 
 body {
-  position: relative;
-  margin: auto;
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.75;
-  color: var(--color-text); }
+  color: var(--color-text);
+  font-family: var(--font-light);
+  line-height: 1.5rem;
+  background-color: var(--color-primary); }
+  body.overflow-hidden {
+    overflow: hidden; }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 0.75rem; }
-  .container__test {
-    padding: 0 0.75rem; }
+  padding: 0 1.5rem;
+  max-width: 85rem;
+  width: 100%; }
 
-.main-menu {
-  display: flex;
-  list-style: none; }
+h2,
+.h2-title {
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 4.5rem; }
+  @media only screen and (max-width: 375px) {
+    h2,
+    .h2-title {
+      font-size: 2rem;
+      line-height: 2.5rem; } }
 
-a {
-  color: var(--color-text); }
-
-.icon {
-  fill: currentColor;
-  stroke: currentColor; }
+.h2-title_small-indent {
+  margin-bottom: 2rem; }
 
 @font-face {
-  font-family: "Roboto";
-  src: url(../.././assets/fonts/RobotoBold.woff) format("woff");
-  font-weight: 700;
+  font-family: "EpilogueLight";
+  src: url(../.././assets/fonts/Epilogue-Light.ttf) format("ttf");
+  font-weight: 300;
   font-style: normal;
   font-display: swap; }
 
