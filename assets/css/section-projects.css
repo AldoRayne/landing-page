@@ -1,0 +1,34 @@
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/section/projects.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*images*/
+.projects__image-wrapper {
+  max-width: 40rem;
+  max-height: 40rem;
+  width: 100%;
+  height: 100%;
+  position: relative; }
+  @media (hover: hover) {
+    .projects__image-wrapper:hover .projects__image {
+      opacity: 0; }
+      .projects__image-wrapper:hover .projects__image_hover {
+        opacity: 1; } }
+  @media (hover: none) {
+    .projects__image-wrapper:active .projects__image {
+      opacity: 0; }
+      .projects__image-wrapper:active .projects__image_hover {
+        opacity: 1; } }
+
+.projects__image {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease; }
+  .projects__image_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; }
+
+
+/*# sourceMappingURL=section-projects.css.map*/

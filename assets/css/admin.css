@@ -8,7 +8,10 @@
     --color-primary: #000;
     --color-text: #fff;
     --color-grey: #b8bec8;
-    --font-light: "EpilogueLight", sans-serif; }
+    --color-grey-dark: #18181a;
+    --font-light: "EpilogueLight", sans-serif;
+    --font-regular: "EpilogueRegular", sans-serif;
+    --font-medium: "EpilogueMedium", sans-serif; }
   .wp-block-post-content * {
     margin: 0;
     padding: 0;
@@ -74,11 +77,38 @@
         line-height: 2.5rem; } }
   .wp-block-post-content .h2-title_small-indent {
     margin-bottom: 2rem; }
+  .wp-block-post-content h3, .wp-block-post-content .h4-title {
+    margin-bottom: 0.25rem;
+    color: var(--color-grey);
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 1.25rem; }
+  .wp-block-post-content h4, .wp-block-post-content .h4-title {
+    font-size: 1.5rem;
+    font-family: var(--font-regular);
+    font-weight: 400;
+    line-height: 2.25rem; }
 
 @font-face {
   .wp-block-post-content {
     font-family: "EpilogueLight";
     src: url(../.././assets/fonts/Epilogue-Light.ttf) format("ttf");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap; } }
+
+@font-face {
+  .wp-block-post-content {
+    font-family: "EpilogueRegular";
+    src: url(../.././assets/fonts/Epilogue-Regular.ttf) format("ttf");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap; } }
+
+@font-face {
+  .wp-block-post-content {
+    font-family: "EpilogueMedium";
+    src: url(../.././assets/fonts/Epilogue-Medium.ttf) format("ttf");
     font-weight: 300;
     font-style: normal;
     font-display: swap; } }

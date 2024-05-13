@@ -1,0 +1,37 @@
+@import "../common/variable";
+@import "../common/mixins";
+
+.projects {
+  &__image-wrapper {
+    max-width: r(640);
+    max-height: r(640);
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    @include hover {
+      .projects {
+        &__image {
+          opacity: 0;
+
+          &_hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    transition: opacity 300ms ease;
+
+    &_hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+}
