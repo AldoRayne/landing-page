@@ -14,10 +14,15 @@
     max-width: 65.625rem; }
   .hero__description {
     margin-left: auto;
-    padding-right: 5.125rem;
     max-width: 26rem;
     color: var(--color-grey);
     font-weight: 300; }
+    @media only screen and (min-width: 376px) {
+      .hero__description {
+        padding-right: 5.125rem; } }
+    @media only screen and (max-width: 375px) {
+      .hero__description {
+        max-width: 14.4375rem; } }
 
 
 /*# sourceMappingURL=section-hero.css.map*/

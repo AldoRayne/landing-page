@@ -18,9 +18,16 @@
 
   &__description {
     margin-left: auto;
-    padding-right: r(82);
     max-width: r(416);
     color: $greyColor;
     font-weight: 300;
+
+    @include min-small {
+      padding-right: r(82);
+    }
+
+    @include max-small {
+      max-width: r(231);
+    }
   }
 }

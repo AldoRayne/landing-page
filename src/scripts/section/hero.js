@@ -1,25 +1,31 @@
-window.addEventListener("DOMContentLoaded", () => {
-    const heroTexts = document.querySelectorAll(".js-hero-text");
+window.addEventListener("DOMContentLoaded", async () => {
+    await heroTextAnimation();
+    document.querySelector("body").classList.remove("overflow-hidden");
 
-    if (!heroTexts.length) return;
+    /** heroTextAnimation() init */
+    async function heroTextAnimation() {
+        const heroTexts = document.querySelectorAll(".js-hero-text");
 
-    heroTexts.forEach((text) => {
-        const words = text.textContent.trim().split(" ");
-        text.textContent = "";
+        if (!heroTexts.length) return;
 
-        words.forEach((word) => {
-            const span = document.createElement("span");
-            span.textContent = word;
+        heroTexts.forEach((text) => {
+            const words = text.textContent.trim().split(" ");
+            text.textContent = "";
 
-            text.append(span);
-            text.innerHTML += " ";
+            words.forEach((word) => {
+                const span = document.createElement("span");
+                span.textContent = word;
+
+                text.append(span);
+                text.innerHTML += " ";
+            });
         });
-    });
 
-    globalTl.to(".js-hero-text span", {
-        y: 0,
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.1,
-    });
+        await globalTl.to(".js-hero-text span", {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            stagger: 0.1,
+        });
+    }
 });

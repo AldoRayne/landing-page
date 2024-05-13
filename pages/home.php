@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Home Page</title>
 	<?php include('../components/head/_head.php') ?>
 	<link rel="stylesheet" href="../assets/css/section-preloader.min.css" />
 	<link rel="stylesheet" href="../assets/css/section-hero.min.css" />
@@ -13,7 +13,7 @@
 <body class="overflow-hidden">
 	<?php include('../components/header/_header.php') ?>
 	<main>
-		<!-- <?php include('../components/sections/preloader.php') ?> -->
+		<?php include('../components/sections/preloader.php') ?>
 		<?php include('../components/sections/hero.php') ?>
 	</main>
 	<?php include('../components/footer/_footer.php') ?>

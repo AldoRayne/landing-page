@@ -1,12 +1,9 @@
 html {
-  font-size: $fontSizeBase;
+  font-size: $fontSizeLg;
 
-  // @include min-tablet {
-  //   font-size: 1.3vw;
-  // }
-  // @include min-laptop {
-  //   font-size: 0.833vw;
-  // }
+  @include max-small {
+    font-size: $fontSizeBase;
+  }
 }
 
 body {
@@ -22,7 +19,8 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: r(1312);
+  padding: 0 r(24);
+  max-width: r(1360);
   width: 100%;
 }
 
@@ -32,6 +30,11 @@ h2,
   font-size: r(64);
   font-weight: 300;
   line-height: r(72);
+
+  @include max-small {
+    font-size: r(32);
+    line-height: r(40);
+  }
 }
 
 .h2-title {
