@@ -21,12 +21,11 @@ window.addEventListener("DOMContentLoaded", async () => {
             });
         });
 
-        await globalTl
-            .to(".js-hero-text", {
-                opacity: 1,
-                duration: 0,
-            })
-            .to(".js-hero-text span", {
+        gsap.set(".js-hero-text", {
+            opacity: 1,
+        });
+
+        await globalTl.to(".js-hero-text span", {
                 y: 0,
                 opacity: 1,
                 duration: 0.5,
