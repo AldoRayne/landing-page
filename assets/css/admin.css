@@ -64,6 +64,8 @@
     padding: 0 1.5rem;
     max-width: 85rem;
     width: 100%; }
+    .wp-block-post-content .container_small {
+      max-width: 71rem; }
   .wp-block-post-content h2,
   .wp-block-post-content .h2-title {
     margin-bottom: 2.5rem;

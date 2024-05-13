@@ -75,6 +75,8 @@ body {
   padding: 0 1.5rem;
   max-width: 85rem;
   width: 100%; }
+  .container_small {
+    max-width: 71rem; }
 
 h2,
 .h2-title {

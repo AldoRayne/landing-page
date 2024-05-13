@@ -1,6 +1,6 @@
 <section class="brands">
-	<div class="container">
-		<h3 class="h3-title text-center">Trusted by companies worldwide</h3>
+	<div class="container container_small">
+		<h3 class="h3-title text-center brands__title js-brand__title">Trusted by companies worldwide</h3>
 		<div class="brands__content">
 			<div class="brands__item js-brand">
 				<img src="../assets/img/brands/angelList.svg" width="223" height="48" loading="lazy" alt="angelList" class="brands__image js-brand__image">

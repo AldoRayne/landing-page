@@ -22,6 +22,10 @@ body {
   padding: 0 r(24);
   max-width: r(1360);
   width: 100%;
+
+  &_small {
+    max-width: r(1136);
+  }
 }
 
 h2,
