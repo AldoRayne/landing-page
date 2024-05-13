@@ -12,10 +12,8 @@ window.addEventListener("DOMContentLoaded", () => {
             const cursor = document.querySelector(".js-cursor");
 
             document.addEventListener("mousemove", (event) => {
-                const x = event.clientX;
-                const y = event.clientY;
-                cursor.style.left = x + "px";
-                cursor.style.top = y + "px";
+                cursor.style.left = `${event.clientX}px`;
+                cursor.style.top = `${event.clientY}px`;
             });
         }
 
