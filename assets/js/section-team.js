@@ -35,22 +35,19 @@ window.addEventListener("DOMContentLoaded", function () {
     function teamAnimation() {
       var resize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
       teamsList.forEach(function (team) {
-        if (resize && isGSAPInstance(gs)) {
-          gs.scrollTrigger.kill();
-        }
+        if (resize && isGSAPInstance(gs)) gs.scrollTrigger.kill();
         var scroll = team.querySelector(".js-team__scroll");
         var teamItems = team.querySelectorAll(".js-team__item");
         var scrollStyles = window.getComputedStyle(scroll);
-        var startValue = parseFloat(scrollStyles.paddingLeft) + scroll.offsetWidth;
+        var startValue = parseFloat(scrollStyles.paddingLeft);
         var itemsArray = _toConsumableArray(Array.from(teamItems));
         itemsArray.pop();
-        console.log(itemsArray);
         var totalWidth = itemsArray.reduce(function (accumulatedWidth, item) {
           return accumulatedWidth + getTotalWidthWithMargin(item);
         }, startValue);
         gs = gsap.to(scroll, {
           x: function x() {
-            return -(totalWidth - window.innerWidth);
+            return -totalWidth;
           },
           ease: "none",
           scrollTrigger: {

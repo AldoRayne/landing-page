@@ -29,20 +29,16 @@ window.addEventListener("DOMContentLoaded", () => {
         /** teamAnimation() init */
         function teamAnimation(resize = false) {
             teamsList.forEach((team) => {
-                if (resize && isGSAPInstance(gs)) {
-                    gs.scrollTrigger.kill();
-                }
+                if (resize && isGSAPInstance(gs)) gs.scrollTrigger.kill();
 
                 const scroll = team.querySelector(".js-team__scroll");
                 const teamItems = team.querySelectorAll(".js-team__item");
 
                 const scrollStyles = window.getComputedStyle(scroll);
-                const startValue = parseFloat(scrollStyles.paddingLeft) + scroll.offsetWidth;
+                const startValue = parseFloat(scrollStyles.paddingLeft);
 
                 const itemsArray = [...Array.from(teamItems)];
                 itemsArray.pop();
-
-                console.log(itemsArray);
 
                 const totalWidth = itemsArray.reduce(
                     (accumulatedWidth, item) => accumulatedWidth + getTotalWidthWithMargin(item),
@@ -50,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 );
 
                 gs = gsap.to(scroll, {
-                    x: () => -(totalWidth - window.innerWidth),
+                    x: () => -totalWidth,
                     ease: "none",
                     scrollTrigger: {
                         trigger: team,
