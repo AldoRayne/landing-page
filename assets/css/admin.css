@@ -90,18 +90,20 @@
     font-size: 2.5rem;
     font-weight: 400;
     line-height: 3rem; }
-  .wp-block-post-content .h3-title_small {
-    margin-bottom: 0.25rem;
-    color: var(--color-grey);
-    font-size: 0.75rem;
-    font-weight: 300;
-    line-height: 1.25rem; }
+  .wp-block-post-content .h3-title_small-indent {
+    margin-bottom: 1.5rem; }
   .wp-block-post-content h4,
   .wp-block-post-content .h4-title {
     margin-bottom: 1.25rem;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2.25rem; }
+  .wp-block-post-content .description {
+    color: var(--color-grey); }
+    .wp-block-post-content .description_small {
+      margin-bottom: 0.25rem;
+      font-size: 0.75rem;
+      line-height: 1.25rem; }
   .wp-block-post-content .button {
     padding: 0.625rem 1rem 0.625rem 2rem;
     width: fit-content;

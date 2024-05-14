@@ -1,0 +1,11 @@
+@import "../common/variable";
+@import "../common/mixins";
+
+.services {
+  margin-bottom: r(248);
+
+
+  &__item {
+    max-width: r(640);
+  }
+}

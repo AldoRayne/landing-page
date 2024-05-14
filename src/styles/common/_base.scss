@@ -67,12 +67,8 @@ h3,
 }
 
 .h3-title {
-  &_small {
-    margin-bottom: r(4);
-    color: $greyColor;
-    font-size: r(12);
-    font-weight: 300;
-    line-height: r(20);
+  &_small-indent {
+    margin-bottom: r(24);
   }
 }
 
@@ -82,6 +78,16 @@ h4,
   font-size: r(24);
   font-weight: 400;
   line-height: r(36);
+}
+
+.description {
+  color: $greyColor;
+
+  &_small {
+    margin-bottom: r(4);
+    font-size: r(12);
+    line-height: r(20);
+  }
 }
 
 .button {
