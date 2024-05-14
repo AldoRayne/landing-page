@@ -1,6 +1,11 @@
-// * {
-//   cursor: none;
-// }
+* {
+  cursor: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
 
 html {
   font-size: $fontSizeLg;

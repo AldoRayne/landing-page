@@ -17,7 +17,7 @@
 <body>
 	<?php include('../components/header/_header.php') ?>
 	<main>
-		<!-- <?php include('../components/sections/preloader.php') ?> -->
+		<?php include('../components/sections/preloader.php') ?>
 		<?php include('../components/sections/hero.php') ?>
 		<?php include('../components/sections/projects.php') ?>
 		<?php include('../components/sections/brands.php') ?>
@@ -31,7 +31,7 @@
 		const globalTl = gsap.timeline();
 	</script>
 	<script src="../assets/js/section-preloader.min.js"></script>
-	<script src="../assets/js/section-hero.min.js"></script>
+	<script src="../assets/js/section-hero.js"></script>
 	<script src="../assets/js/section-projects.min.js"></script>
 	<script src="../assets/js/section-brands.min.js"></script>
 	<script src="../assets/js/section-team.min.js"></script>

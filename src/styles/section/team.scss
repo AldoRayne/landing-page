@@ -2,6 +2,20 @@
 @import "../common/mixins";
 
 .team {
+  margin-bottom: 100vh;
+
+  &__scroll {
+    display: flex;
+  }
+
+  &__item {
+    flex-shrink: 0;
+
+    &:not(:last-child) {
+      margin-right: r(32);
+    }
+  }
+
   &__image-wrapper {
     margin-bottom: r(12);
     max-width: r(416);
