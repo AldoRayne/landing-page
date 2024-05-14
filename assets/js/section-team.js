@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", function () {
           scrollTrigger: {
             trigger: team,
             pin: true,
-            scrub: 1,
+            scrub: true,
             start: "top top",
             end: function end() {
               return "+=".concat(totalWidth);

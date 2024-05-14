@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     scrollTrigger: {
                         trigger: team,
                         pin: true,
-                        scrub: 1,
+                        scrub: true,
                         start: "top top",
                         end: () => `+=${totalWidth}`,
                     },
