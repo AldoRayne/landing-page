@@ -35,17 +35,14 @@ window.addEventListener("DOMContentLoaded", /*#__PURE__*/_asyncToGenerator( /*#_
                       text.innerHTML += " ";
                     });
                   });
-                  gsap.set(".js-hero-text", {
-                    opacity: 1
-                  });
-                  _context.next = 7;
+                  _context.next = 6;
                   return globalTl.to(".js-hero-text span", {
                     y: 0,
                     opacity: 1,
                     duration: 0.4,
                     stagger: 0.1
                   });
-                case 7:
+                case 6:
                 case "end":
                   return _context.stop();
               }

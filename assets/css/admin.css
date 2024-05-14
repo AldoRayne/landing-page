@@ -156,7 +156,6 @@
     top: 0;
     left: 0;
     background-color: inherit;
-    opacity: 0;
     z-index: 1; }
     .wp-block-post-content .header__content {
       display: flex;
@@ -176,12 +175,10 @@
     z-index: 9999; }
   .wp-block-post-content .hero {
     padding: 10.5rem 0 5.5rem; }
-    .wp-block-post-content .hero__text {
+    .wp-block-post-content .hero__text span {
+      display: inline-block;
+      transform: translateY(50%);
       opacity: 0; }
-      .wp-block-post-content .hero__text span {
-        display: inline-block;
-        transform: translateY(50%);
-        opacity: 0; }
     .wp-block-post-content .hero__heading {
       max-width: 65.625rem; }
     .wp-block-post-content .hero__description {

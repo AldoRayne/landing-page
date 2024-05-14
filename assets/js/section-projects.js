@@ -21,18 +21,14 @@ window.addEventListener("DOMContentLoaded", function () {
     projects.forEach(function (project) {
       var content = project.querySelector(".js-project__content");
       gsap.to(content, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.3,
         scrollTrigger: {
           trigger: project,
           start: "top bottom",
           end: "10% bottom",
-          scrub: true
-        },
-        onComplete: function onComplete() {
-          gsap.to(content, {
-            y: 0,
-            opacity: 1,
-            stagger: 0.3
-          });
+          toggleActions: "play none none none"
         }
       });
     });

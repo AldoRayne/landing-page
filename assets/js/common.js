@@ -25,9 +25,6 @@ window.addEventListener("DOMContentLoaded", function () {
     function headerShowing() {
       var header = document.querySelector(".js-header");
       if (!header) return;
-      gsap.set(".js-header", {
-        opacity: 1
-      });
     }
   }, 500);
 });

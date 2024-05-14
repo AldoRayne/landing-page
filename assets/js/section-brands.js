@@ -18,24 +18,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
   /** brandsAnimation() init */
   function brandsAnimation() {
-    gsap.set(".js-brand__title", {
-      opacity: 1
-    });
     brands.forEach(function (brand) {
       var image = brand.querySelector(".js-brand__image");
       gsap.to(image, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
         scrollTrigger: {
           trigger: brand,
           start: "50% bottom",
           end: "bottom bottom",
-          scrub: true
-        },
-        onComplete: function onComplete() {
-          gsap.to(image, {
-            y: 0,
-            opacity: 1,
-            stagger: 0.2
-          });
+          toggleActions: "play none none none"
         }
       });
     });

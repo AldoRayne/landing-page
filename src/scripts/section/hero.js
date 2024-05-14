@@ -21,10 +21,6 @@ window.addEventListener("DOMContentLoaded", async () => {
             });
         });
 
-        gsap.set(".js-hero-text", {
-            opacity: 1,
-        });
-
         await globalTl.to(".js-hero-text span", {
             y: 0,
             opacity: 1,
