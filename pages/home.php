@@ -34,7 +34,7 @@
 	<script src="../assets/js/section-hero.js"></script>
 	<script src="../assets/js/section-projects.min.js"></script>
 	<script src="../assets/js/section-brands.min.js"></script>
-	<script src="../assets/js/section-team.min.js"></script>
+	<script src="../assets/js/section-team.js"></script>
 </body>
 
 </html>

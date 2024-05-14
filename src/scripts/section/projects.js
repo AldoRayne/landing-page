@@ -9,8 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        projectsAnimation();
-
         globalTl.to(".js-hero__word", {
             onComplete: () => projectsAnimation(),
         });
@@ -20,7 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
             projects.forEach((project) => {
                 const content = project.querySelector(".js-project__content");
 
-                globalTl.to(content, {
+                gsap.to(content, {
                     y: 0,
                     opacity: 1,
                     stagger: 0.3,

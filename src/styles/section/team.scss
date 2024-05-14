@@ -2,26 +2,22 @@
 @import "../common/mixins";
 
 .team {
-  margin-bottom: 100vh;
+  margin-bottom: r(114);
+  padding-bottom: r(30);
 
   &__scroll {
     display: flex;
   }
 
   &__item {
+    margin-right: r(32);
     flex-shrink: 0;
-
-    &:not(:last-child) {
-      margin-right: r(32);
-    }
   }
 
   &__image-wrapper {
     margin-bottom: r(12);
-    max-width: r(416);
-    max-height: r(480);
-    width: 100%;
-    height: 100%;
+    width: r(416);
+    height: r(480);
     position: relative;
     overflow: hidden;
 

@@ -15,24 +15,36 @@ window.addEventListener("DOMContentLoaded", () => {
 
         /** teamAnimation() init */
         function teamAnimation() {
-            console.log("team");
-
             teamsList.forEach((team) => {
                 const scroll = team.querySelector(".js-team__scroll");
+                const teamItems = team.querySelectorAll(".js-team__item");
+
+                let totalWidth = 0;
+                teamItems.forEach((item) => {
+                    totalWidth += getTotalWidthWithMargin(item);
+                });
 
                 gsap.to(scroll, {
-                    xPercent: -200,
+                    x: () => -(totalWidth - window.innerWidth),
                     ease: "none",
                     scrollTrigger: {
                         trigger: team,
                         pin: true,
                         scrub: 1,
                         start: "bottom bottom",
-                        end: () => "+=" + scroll.offsetWidth,
-                        markers: true,
+                        end: () => `+=${totalWidth}`,
                     },
                 });
             });
+        }
+
+        /** getTotalWidthWithMargin() init */
+        function getTotalWidthWithMargin(element) {
+            const itemWidth = element.getBoundingClientRect().width;
+            const itemStyles = window.getComputedStyle(element);
+            const marginRight = parseFloat(itemStyles.marginRight);
+            
+            return itemWidth + marginRight;
         }
     }, 500);
 });

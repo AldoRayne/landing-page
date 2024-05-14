@@ -19,11 +19,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
     /** teamAnimation() init */
     function teamAnimation() {
-      console.log("team");
       teamsList.forEach(function (team) {
         var scroll = team.querySelector(".js-team__scroll");
+        var teamItems = team.querySelectorAll(".js-team__item");
+        var totalWidth = 0;
+        teamItems.forEach(function (item) {
+          totalWidth += getTotalWidthWithMargin(item);
+        });
         gsap.to(scroll, {
-          xPercent: -200,
+          x: function x() {
+            return -(totalWidth - window.innerWidth);
+          },
           ease: "none",
           scrollTrigger: {
             trigger: team,
@@ -31,12 +37,19 @@ window.addEventListener("DOMContentLoaded", function () {
             scrub: 1,
             start: "bottom bottom",
             end: function end() {
-              return "+=" + scroll.offsetWidth;
-            },
-            markers: true
+              return "+=".concat(totalWidth);
+            }
           }
         });
       });
+    }
+
+    /** getTotalWidthWithMargin() init */
+    function getTotalWidthWithMargin(element) {
+      var itemWidth = element.getBoundingClientRect().width;
+      var itemStyles = window.getComputedStyle(element);
+      var marginRight = parseFloat(itemStyles.marginRight);
+      return itemWidth + marginRight;
     }
   }, 500);
 });
