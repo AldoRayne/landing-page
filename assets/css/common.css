@@ -6,10 +6,7 @@
   --color-text: #fff;
   --color-grey: #b8bec8;
   --color-grey-dark: #18181a;
-  --font-light: "EpilogueLight", sans-serif;
-  --font-regular: "EpilogueRegular", sans-serif;
-  --font-medium: "EpilogueMedium", sans-serif;
-  --font-bold: "EpilogueBold", sans-serif; }
+  --font-main: "EpilogueFont", sans-serif; }
 
 /*images*/
 * {
@@ -65,7 +62,8 @@ html {
 
 body {
   color: var(--color-text);
-  font-family: var(--font-light);
+  font-family: var(--font-main);
+  font-weight: 300;
   line-height: 1.5rem;
   background-color: var(--color-primary); }
   body.overflow-hidden {
@@ -98,7 +96,6 @@ h3,
 .h3-title {
   margin-bottom: 3.5rem;
   font-size: 2.5rem;
-  font-family: var(--font-regular);
   font-weight: 400;
   line-height: 3rem; }
 
@@ -106,7 +103,6 @@ h4,
 .h4-title {
   margin-bottom: 3.5rem;
   font-size: 1.5rem;
-  font-family: var(--font-regular);
   font-weight: 400;
   line-height: 2.25rem; }
 
@@ -118,7 +114,6 @@ h4,
   position: relative;
   font-size: 0.75rem;
   line-height: 1.125rem;
-  font-family: var(--font-bold);
   font-weight: 700;
   text-decoration: none;
   background-color: var(--color-text);
@@ -162,30 +157,9 @@ h4,
   text-align: center; }
 
 @font-face {
-  font-family: "EpilogueLight";
-  src: url(../.././assets/fonts/Epilogue-Light.ttf) format("ttf");
+  font-family: "EpilogueFont";
+  src: url(../.././assets/fonts/Epilogue-VariableFont_wght.ttf) format("ttf");
   font-weight: 300;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "EpilogueRegular";
-  src: url(../.././assets/fonts/Epilogue-Regular.ttf) format("ttf");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "EpilogueMedium";
-  src: url(../.././assets/fonts/Epilogue-Medium.ttf) format("ttf");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "EpilogueBold";
-  src: url(../.././assets/fonts/Epilogue-Bold.ttf) format("ttf");
-  font-weight: 700;
   font-style: normal;
   font-display: swap; }
 

@@ -9,10 +9,7 @@
     --color-text: #fff;
     --color-grey: #b8bec8;
     --color-grey-dark: #18181a;
-    --font-light: "EpilogueLight", sans-serif;
-    --font-regular: "EpilogueRegular", sans-serif;
-    --font-medium: "EpilogueMedium", sans-serif;
-    --font-bold: "EpilogueBold", sans-serif; }
+    --font-main: "EpilogueFont", sans-serif; }
   .wp-block-post-content * {
     margin: 0;
     padding: 0;
@@ -55,7 +52,8 @@
         font-size: 16px; } }
   .wp-block-post-content body {
     color: var(--color-text);
-    font-family: var(--font-light);
+    font-family: var(--font-main);
+    font-weight: 300;
     line-height: 1.5rem;
     background-color: var(--color-primary); }
     .wp-block-post-content body.overflow-hidden {
@@ -84,14 +82,12 @@
   .wp-block-post-content .h3-title {
     margin-bottom: 3.5rem;
     font-size: 2.5rem;
-    font-family: var(--font-regular);
     font-weight: 400;
     line-height: 3rem; }
   .wp-block-post-content h4,
   .wp-block-post-content .h4-title {
     margin-bottom: 3.5rem;
     font-size: 1.5rem;
-    font-family: var(--font-regular);
     font-weight: 400;
     line-height: 2.25rem; }
   .wp-block-post-content .button {
@@ -102,7 +98,6 @@
     position: relative;
     font-size: 0.75rem;
     line-height: 1.125rem;
-    font-family: var(--font-bold);
     font-weight: 700;
     text-decoration: none;
     background-color: var(--color-text);
@@ -146,33 +141,9 @@
 
 @font-face {
   .wp-block-post-content {
-    font-family: "EpilogueLight";
-    src: url(../.././assets/fonts/Epilogue-Light.ttf) format("ttf");
+    font-family: "EpilogueFont";
+    src: url(../.././assets/fonts/Epilogue-VariableFont_wght.ttf) format("ttf");
     font-weight: 300;
-    font-style: normal;
-    font-display: swap; } }
-
-@font-face {
-  .wp-block-post-content {
-    font-family: "EpilogueRegular";
-    src: url(../.././assets/fonts/Epilogue-Regular.ttf) format("ttf");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap; } }
-
-@font-face {
-  .wp-block-post-content {
-    font-family: "EpilogueMedium";
-    src: url(../.././assets/fonts/Epilogue-Medium.ttf) format("ttf");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap; } }
-
-@font-face {
-  .wp-block-post-content {
-    font-family: "EpilogueBold";
-    src: url(../.././assets/fonts/Epilogue-Bold.ttf) format("ttf");
-    font-weight: 700;
     font-style: normal;
     font-display: swap; } }
   .wp-block-post-content .header {
