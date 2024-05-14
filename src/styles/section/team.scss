@@ -2,10 +2,11 @@
 @import "../common/mixins";
 
 .team {
-  margin-bottom: r(114);
-  padding-bottom: r(30);
+  margin-bottom: r(94);
+  padding-bottom: r(50);
 
   &__scroll {
+    padding-left: r(292);
     display: flex;
   }
 

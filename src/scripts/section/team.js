@@ -19,10 +19,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 const scroll = team.querySelector(".js-team__scroll");
                 const teamItems = team.querySelectorAll(".js-team__item");
 
-                let totalWidth = 0;
-                teamItems.forEach((item) => {
-                    totalWidth += getTotalWidthWithMargin(item);
-                });
+                const scrollStyles = window.getComputedStyle(scroll);
+                const scrollPaddingLeft = parseFloat(scrollStyles.paddingLeft);
+
+                const totalWidth = Array.from(teamItems).reduce(
+                    (accumulatedWidth, item) => accumulatedWidth + getTotalWidthWithMargin(item),
+                    scrollPaddingLeft
+                );
 
                 gsap.to(scroll, {
                     x: () => -(totalWidth - window.innerWidth),
@@ -43,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const itemWidth = element.getBoundingClientRect().width;
             const itemStyles = window.getComputedStyle(element);
             const marginRight = parseFloat(itemStyles.marginRight);
-            
+
             return itemWidth + marginRight;
         }
     }, 500);

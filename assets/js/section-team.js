@@ -22,10 +22,11 @@ window.addEventListener("DOMContentLoaded", function () {
       teamsList.forEach(function (team) {
         var scroll = team.querySelector(".js-team__scroll");
         var teamItems = team.querySelectorAll(".js-team__item");
-        var totalWidth = 0;
-        teamItems.forEach(function (item) {
-          totalWidth += getTotalWidthWithMargin(item);
-        });
+        var scrollStyles = window.getComputedStyle(scroll);
+        var scrollPaddingLeft = parseFloat(scrollStyles.paddingLeft);
+        var totalWidth = Array.from(teamItems).reduce(function (accumulatedWidth, item) {
+          return accumulatedWidth + getTotalWidthWithMargin(item);
+        }, scrollPaddingLeft);
         gsap.to(scroll, {
           x: function x() {
             return -(totalWidth - window.innerWidth);

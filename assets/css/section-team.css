@@ -3,9 +3,10 @@
   \*************************************************************************************************************************************************************************************************************************/
 /*images*/
 .team {
-  margin-bottom: 7.125rem;
-  padding-bottom: 1.875rem; }
+  margin-bottom: 5.875rem;
+  padding-bottom: 3.125rem; }
   .team__scroll {
+    padding-left: 18.25rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
