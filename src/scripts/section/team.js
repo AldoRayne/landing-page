@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         trigger: team,
                         pin: true,
                         scrub: 1,
-                        start: "bottom bottom",
+                        start: "top top",
                         end: () => `+=${totalWidth}`,
                     },
                 });

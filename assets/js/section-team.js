@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", function () {
             trigger: team,
             pin: true,
             scrub: 1,
-            start: "bottom bottom",
+            start: "top top",
             end: function end() {
               return "+=".concat(totalWidth);
             }
