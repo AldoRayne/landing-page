@@ -14,32 +14,25 @@ window.addEventListener("DOMContentLoaded", /*#__PURE__*/_asyncToGenerator( /*#_
       case 0:
         _heroTextAnimation = function _heroTextAnimation3() {
           _heroTextAnimation = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-            var heroTexts;
+            var heroTexts, splitText;
             return _regeneratorRuntime().wrap(function _callee$(_context) {
               while (1) switch (_context.prev = _context.next) {
                 case 0:
-                  heroTexts = document.querySelectorAll(".js-hero-text");
+                  heroTexts = document.querySelectorAll(".js-hero__text");
                   if (heroTexts.length) {
                     _context.next = 3;
                     break;
                   }
                   return _context.abrupt("return");
                 case 3:
-                  heroTexts.forEach(function (text) {
-                    var words = text.textContent.trim().split(" ");
-                    text.textContent = "";
-                    words.forEach(function (word) {
-                      var span = document.createElement("span");
-                      span.textContent = word;
-                      text.append(span);
-                      text.innerHTML += " ";
-                    });
+                  splitText = new SplitText(".js-hero__text", {
+                    type: "words"
                   });
-                  gsap.set(".js-hero-text", {
-                    opacity: 1
+                  splitText.words.forEach(function (word) {
+                    word.classList.add("hero__word", "js-hero__word");
                   });
                   _context.next = 7;
-                  return globalTl.to(".js-hero-text span", {
+                  return globalTl.to(splitText.words, {
                     y: 0,
                     opacity: 1,
                     duration: 0.4,

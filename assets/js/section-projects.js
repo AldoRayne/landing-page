@@ -6,11 +6,11 @@ var __webpack_exports__ = {};
 window.addEventListener("DOMContentLoaded", function () {
   var projects = document.querySelectorAll(".js-project");
   if (!projects.length) return;
-  if (!document.querySelector(".js-hero-text")) {
+  if (!document.querySelector(".js-hero__text")) {
     projectsAnimation();
     return;
   }
-  globalTl.to(".js-hero-text span", {
+  globalTl.to(".js-hero__word", {
     onComplete: function onComplete() {
       return projectsAnimation();
     }
@@ -21,18 +21,14 @@ window.addEventListener("DOMContentLoaded", function () {
     projects.forEach(function (project) {
       var content = project.querySelector(".js-project__content");
       gsap.to(content, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.3,
         scrollTrigger: {
           trigger: project,
           start: "top bottom",
           end: "10% bottom",
-          scrub: true
-        },
-        onComplete: function onComplete() {
-          gsap.to(content, {
-            y: 0,
-            opacity: 1,
-            stagger: 0.3
-          });
+          toggleActions: "play none none none"
         }
       });
     });

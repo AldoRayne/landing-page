@@ -5,9 +5,7 @@
   padding: r(168) 0 r(88);
 
   &__text {
-    opacity: 0;
-
-    span {
+    .hero__word {
       display: inline-block;
       transform: translateY(50%);
       opacity: 0;

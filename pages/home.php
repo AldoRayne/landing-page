@@ -16,12 +16,13 @@
 <body>
 	<?php include('../components/header/_header.php') ?>
 	<main>
-		<?php include('../components/sections/preloader.php') ?>
+		<!-- <?php include('../components/sections/preloader.php') ?> -->
 		<?php include('../components/sections/hero.php') ?>
 		<?php include('../components/sections/projects.php') ?>
 		<?php include('../components/sections/brands.php') ?>
 	</main>
 	<?php include('../components/footer/_footer.php') ?>
+	<?php include('../components/elements/_cursor.php') ?>
 	<?php include('../components/scripts/_scripts.php') ?>
 	<script>
 		/** Global gsap.timeline() value */
@@ -30,7 +31,7 @@
 	<script src="../assets/js/section-preloader.min.js"></script>
 	<script src="../assets/js/section-hero.min.js"></script>
 	<script src="../assets/js/section-projects.min.js"></script>
-	<script src="../assets/js/section-brands.js"></script>
+	<script src="../assets/js/section-brands.min.js"></script>
 </body>
 
 </html>

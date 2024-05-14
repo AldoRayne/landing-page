@@ -1,3 +1,7 @@
+// * {
+//   cursor: none;
+// }
+
 html {
   font-size: $fontSizeLg;
 
@@ -8,7 +12,8 @@ html {
 
 body {
   color: $textColor;
-  font-family: $lightFont;
+  font-family: $mainFont;
+  font-weight: 300;
   line-height: r(24);
   background-color: $primaryColor;
 
@@ -47,20 +52,69 @@ h2,
   }
 }
 
-h3, .h3-title {
+h3,
+.h3-title {
   margin-bottom: r(56);
   font-size: r(40);
-  font-family: $regularFont;
   font-weight: 400;
   line-height: r(48);
 }
 
-h4, .h4-title {
+h4,
+.h4-title {
   margin-bottom: r(56);
   font-size: r(24);
-  font-family: $regularFont;
   font-weight: 400;
   line-height: r(36);
+}
+
+.button {
+  padding: r(10) r(16) r(10) r(32);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: r(12);
+  line-height: r(18);
+  font-weight: 700;
+  text-decoration: none;
+  background-color: $textColor;
+  border: none;
+  border-radius: r(200);
+
+  @include hover {
+    &:before {
+      width: calc(100% + 2px);
+      height: 100%;
+      left: -1px;
+      border-radius: r(200);
+    }
+
+    .button__text {
+      color: $textColor;
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: r(12);
+    height: r(12);
+    position: absolute;
+    top: 50%;
+    left: r(13);
+    transform: translateY(-50%);
+    background-color: $primaryColor;
+    border-radius: 100%;
+    transition: all 300ms ease;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    color: $primaryColor;
+    transition: color 300ms ease;
+  }
 }
 
 .text-center {

@@ -1,0 +1,10 @@
+.cursor {
+  position: fixed;
+  width: r(16);
+  height: r(16);
+  background-color: $textColor;
+  border-radius: 100%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+}

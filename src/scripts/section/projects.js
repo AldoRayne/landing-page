@@ -3,12 +3,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!projects.length) return;
 
-    if (!document.querySelector(".js-hero-text")) {
+    if (!document.querySelector(".js-hero__text")) {
         projectsAnimation();
         return;
     }
 
-    globalTl.to(".js-hero-text span", {
+    globalTl.to(".js-hero__word", {
         onComplete: () => projectsAnimation(),
     });
 
@@ -18,18 +18,14 @@ window.addEventListener("DOMContentLoaded", () => {
             const content = project.querySelector(".js-project__content");
 
             gsap.to(content, {
+                y: 0,
+                opacity: 1,
+                stagger: 0.3,
                 scrollTrigger: {
                     trigger: project,
                     start: "top bottom",
                     end: "10% bottom",
-                    scrub: true,
-                },
-                onComplete: () => {
-                    gsap.to(content, {
-                        y: 0,
-                        opacity: 1,
-                        stagger: 0.3,
-                    });
+                    toggleActions: "play none none none",
                 },
             });
         });

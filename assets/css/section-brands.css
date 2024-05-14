@@ -7,9 +7,6 @@
   grid-template-columns: repeat(3, 1fr);
   row-gap: 3.75rem; }
 
-.brands__title {
-  opacity: 0; }
-
 .brands__item {
   height: 6.5rem;
   display: -webkit-box;
