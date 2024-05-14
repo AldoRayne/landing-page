@@ -4,14 +4,14 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     /** heroTextAnimation() init */
     async function heroTextAnimation() {
-        const heroTexts = document.querySelectorAll(".js-hero-text");
+        const heroTexts = document.querySelectorAll(".js-hero__text");
 
         if (!heroTexts.length) return;
 
-        const splitText = new SplitText(".js-hero-text", { type: "words" });
+        const splitText = new SplitText(".js-hero__text", { type: "words" });
 
         splitText.words.forEach((word) => {
-            word.classList.add("hero__word", "js-hero-word");
+            word.classList.add("hero__word", "js-hero__word");
         });
 
         await globalTl.to(splitText.words, {

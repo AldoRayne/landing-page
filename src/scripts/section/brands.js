@@ -3,12 +3,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!brands.length) return;
 
-    if (!document.querySelector(".js-hero-text")) {
+    if (!document.querySelector(".js-hero__text")) {
         brandsAnimation();
         return;
     }
 
-    globalTl.to(".js-hero-word", {
+    globalTl.to(".js-hero__word", {
         onComplete: () => brandsAnimation(),
     });
 

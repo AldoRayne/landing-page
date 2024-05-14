@@ -18,18 +18,18 @@ window.addEventListener("DOMContentLoaded", /*#__PURE__*/_asyncToGenerator( /*#_
             return _regeneratorRuntime().wrap(function _callee$(_context) {
               while (1) switch (_context.prev = _context.next) {
                 case 0:
-                  heroTexts = document.querySelectorAll(".js-hero-text");
+                  heroTexts = document.querySelectorAll(".js-hero__text");
                   if (heroTexts.length) {
                     _context.next = 3;
                     break;
                   }
                   return _context.abrupt("return");
                 case 3:
-                  splitText = new SplitText(".js-hero-text", {
+                  splitText = new SplitText(".js-hero__text", {
                     type: "words"
                   });
                   splitText.words.forEach(function (word) {
-                    word.classList.add("hero__word", "js-hero-word");
+                    word.classList.add("hero__word", "js-hero__word");
                   });
                   _context.next = 7;
                   return globalTl.to(splitText.words, {
