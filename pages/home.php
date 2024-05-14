@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="../assets/css/section-projects.min.css" />
 	<link rel="stylesheet" href="../assets/css/section-brands.min.css" />
 	<link rel="stylesheet" href="../assets/css/section-team.min.css" />
+	<link rel="stylesheet" href="../assets/css/section-services.min.css" />
 
 </head>
 
@@ -24,6 +25,7 @@
 				<?php include('../components/sections/projects.php') ?>
 				<?php include('../components/sections/brands.php') ?>
 				<?php include('../components/sections/team.php') ?>
+				<?php include('../components/sections/services.php') ?>
 			</main>
 			<?php include('../components/footer/_footer.php') ?>
 		</div>
@@ -35,10 +37,11 @@
 		const globalTl = gsap.timeline();
 	</script>
 	<script src="../assets/js/section-preloader.min.js"></script>
-	<script src="../assets/js/section-hero.js"></script>
+	<script src="../assets/js/section-hero.min.js"></script>
 	<script src="../assets/js/section-projects.min.js"></script>
 	<script src="../assets/js/section-brands.min.js"></script>
-	<script src="../assets/js/section-team.js"></script>
+	<script src="../assets/js/section-team.min.js"></script>
+	<script src="../assets/js/section-services.js"></script>
 </body>
 
 </html>
