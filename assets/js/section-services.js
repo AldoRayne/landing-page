@@ -9,32 +9,17 @@ window.addEventListener("DOMContentLoaded", function () {
     if (!servicesList.length) return;
     servicesList.forEach(function (service) {
       var serviceSlider = service.querySelector(".js-service__swiper");
-      var serviceWrapper = service.querySelector(".js-service__wrapper");
       var swiper = new Swiper(serviceSlider, {
         slidesPerView: "auto",
         spaceBetween: 256,
         allowTouchMove: false
       });
-
-      // ScrollTrigger.create({
-      //     trigger: serviceSlider,
-      //     start: "top top",
-      //     end: () => "+=" + document.querySelectorAll(".swiper-slide").length * window.innerHeight,
-      //     pin: true,
-      //     scrub: true,
-      //     onUpdate: (self) => {
-      //         const progress = self.progress;
-      //         const totalSlides = swiper.slides.length - 1;
-      //         swiper.slideTo(Math.round(progress * totalSlides), 0, false);
-      //     },
-      // });
-
       var tl = gsap.timeline({
         scrollTrigger: {
-          trigger: serviceSlider,
+          trigger: service,
           start: "top top",
           end: function end() {
-            return "+=".concat(serviceWrapper.scrollHeight);
+            return "+=" + serviceSlider.querySelectorAll(".js-service__item").length * window.innerHeight;
           },
           pin: true,
           scrub: true
@@ -44,7 +29,16 @@ window.addEventListener("DOMContentLoaded", function () {
         tl.to(swiper.slides, {
           xPercent: -100 * (index + 1),
           duration: 1,
-          ease: "none"
+          ease: "none",
+          onUpdate: function onUpdate() {
+            swiper.slides.forEach(function (s, i) {
+              if (i === Math.round(tl.progress() * (swiper.slides.length - 1))) {
+                s.classList.add("swiper-slide-active");
+              } else {
+                s.classList.remove("swiper-slide-active");
+              }
+            });
+          }
         });
       });
     });

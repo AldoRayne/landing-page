@@ -9,6 +9,11 @@
   .services__item {
     max-width: 40rem;
     width: 100%; }
+    .services__item > * {
+      -webkit-transition: color 300ms ease;
+      transition: color 300ms ease; }
+    .services__item:not(.swiper-slide-active) > * {
+      color: var(--color-grey-medium); }
 
 
 /*# sourceMappingURL=section-services.css.map*/

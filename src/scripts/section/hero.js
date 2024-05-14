@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(async () => {
         await heroTextAnimation();
         document.querySelector("body").classList.remove("overflow-hidden");
-
+        
         /** heroTextAnimation() init */
         async function heroTextAnimation() {
             const heroTexts = document.querySelectorAll(".js-hero__text");

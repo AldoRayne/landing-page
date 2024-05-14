@@ -11,5 +11,13 @@
   &__item {
     max-width: r(640);
     width: 100%;
+
+    & > * {
+      transition: color 300ms ease;
+    }
+
+    &:not(.swiper-slide-active) > * {
+      color: $greyMediumColor;
+    }
   }
 }

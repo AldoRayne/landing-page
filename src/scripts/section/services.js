@@ -6,7 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
         servicesList.forEach((service) => {
             const serviceSlider = service.querySelector(".js-service__swiper");
-            const serviceWrapper = service.querySelector(".js-service__wrapper");
 
             const swiper = new Swiper(serviceSlider, {
                 slidesPerView: "auto",
@@ -14,24 +13,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 allowTouchMove: false,
             });
 
-            // ScrollTrigger.create({
-            //     trigger: serviceSlider,
-            //     start: "top top",
-            //     end: () => "+=" + document.querySelectorAll(".swiper-slide").length * window.innerHeight,
-            //     pin: true,
-            //     scrub: true,
-            //     onUpdate: (self) => {
-            //         const progress = self.progress;
-            //         const totalSlides = swiper.slides.length - 1;
-            //         swiper.slideTo(Math.round(progress * totalSlides), 0, false);
-            //     },
-            // });
-
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: serviceSlider,
+                    trigger: service,
                     start: "top top",
-                    end: () => `+=${serviceWrapper.scrollHeight}`,
+                    end: () => "+=" + serviceSlider.querySelectorAll(".js-service__item").length * window.innerHeight,
                     pin: true,
                     scrub: true,
                 },
@@ -42,6 +28,15 @@ window.addEventListener("DOMContentLoaded", () => {
                     xPercent: -100 * (index + 1),
                     duration: 1,
                     ease: "none",
+                    onUpdate: () => {
+                        swiper.slides.forEach((s, i) => {
+                            if (i === Math.round(tl.progress() * (swiper.slides.length - 1))) {
+                                s.classList.add("swiper-slide-active");
+                            } else {
+                                s.classList.remove("swiper-slide-active");
+                            }
+                        });
+                    },
                 });
             });
         });
