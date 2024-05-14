@@ -50,16 +50,13 @@ window.addEventListener("DOMContentLoaded", function () {
           heroTextAnimation = function _heroTextAnimation2() {
             return _heroTextAnimation.apply(this, arguments);
           };
-          globalTl.set(".js-hidden", {
-            opacity: 1
-          });
-          _context2.next = 5;
+          _context2.next = 4;
           return heroTextAnimation();
-        case 5:
+        case 4:
           document.querySelector("body").classList.remove("overflow-hidden");
 
           /** heroTextAnimation() init */
-        case 6:
+        case 5:
         case "end":
           return _context2.stop();
       }

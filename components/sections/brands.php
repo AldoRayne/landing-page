@@ -1,4 +1,4 @@
-<section class="brands  hidden js-hidden">
+<section class="brands">
 	<div class="container container_small">
 		<h3 class="h3-title text-center">Trusted by companies worldwide</h3>
 		<div class="brands__content">

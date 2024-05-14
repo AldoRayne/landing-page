@@ -1,4 +1,4 @@
-<section class="hero  hidden js-hidden">
+<section class="hero">
 	<div class="container">
 		<h2 class="h2-title h2-title_small-indent hero__heading hero__text js-hero__text">
 			We shape the future human habitat by designing innovation today.

@@ -1,2 +1,2 @@
-<footer class="footer  hidden js-hidden">
+<footer class="footer">
 </footer>

@@ -1,4 +1,4 @@
-<section class="projects  hidden js-hidden">
+<section class="projects">
 	<div class="container">
 		<div class="projects__row">
 			<div class="projects__item js-project">

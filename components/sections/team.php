@@ -1,4 +1,4 @@
-<section class="team js-team  hidden js-hidden">
+<section class="team js-team">
 	<div class="container">
 		<h2 class="h2-title">Meet the team.</h2>
 	</div>
