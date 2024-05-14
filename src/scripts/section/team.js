@@ -4,6 +4,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if (!teamsList.length) return;
 
+        let gs = null;
+
         if (!document.querySelector(".js-hero__text")) {
             teamAnimation();
             return;
@@ -13,9 +15,26 @@ window.addEventListener("DOMContentLoaded", () => {
             onComplete: () => teamAnimation(),
         });
 
+        let defaultWidth = window.innerWidth;
+
+        window.addEventListener("resize", () => {
+            const currentWidth = window.innerWidth;
+
+            if (defaultWidth === currentWidth) return;
+
+            defaultWidth = currentWidth;
+            teamAnimation(true);
+        });
+
         /** teamAnimation() init */
-        function teamAnimation() {
+        function teamAnimation(resize = false) {
             teamsList.forEach((team) => {
+                console.log(isGSAPInstance(gs));
+
+                if (resize && isGSAPInstance(gs)) {
+                    gs.scrollTrigger.kill();
+                }
+
                 const scroll = team.querySelector(".js-team__scroll");
                 const teamItems = team.querySelectorAll(".js-team__item");
 
@@ -27,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     scrollPaddingLeft
                 );
 
-                gsap.to(scroll, {
+                gs = gsap.to(scroll, {
                     x: () => -(totalWidth - window.innerWidth),
                     ease: "none",
                     scrollTrigger: {
@@ -48,6 +67,11 @@ window.addEventListener("DOMContentLoaded", () => {
             const marginRight = parseFloat(itemStyles.marginRight);
 
             return itemWidth + marginRight;
+        }
+
+        /** isGSAPInstance() init */
+        function isGSAPInstance(value) {
+            return value && typeof value.play === "function" && typeof value.pause === "function";
         }
     }, 500);
 });
