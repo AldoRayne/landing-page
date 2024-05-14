@@ -60,9 +60,19 @@ h3,
   line-height: r(48);
 }
 
+.h3-title {
+  &_small {
+    margin-bottom: r(4);
+    color: $greyColor;
+    font-size: r(12);
+    font-weight: 300;
+    line-height: r(20);
+  }
+}
+
 h4,
 .h4-title {
-  margin-bottom: r(56);
+  margin-bottom: r(20);
   font-size: r(24);
   font-weight: 400;
   line-height: r(36);

@@ -2,28 +2,28 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/section/brands.scss ***!
   \***************************************************************************************************************************************************************************************************************************/
 /*images*/
-.brands__content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 3.75rem; }
-
-.brands__item {
-  height: 6.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-
-.brands__image {
-  opacity: 0;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%); }
+.brands {
+  margin-bottom: 15.25rem; }
+  .brands__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 3.75rem; }
+  .brands__item {
+    height: 6.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .brands__image {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%); }
 
 
 /*# sourceMappingURL=section-brands.css.map*/

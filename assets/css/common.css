@@ -99,9 +99,16 @@ h3,
   font-weight: 400;
   line-height: 3rem; }
 
+.h3-title_small {
+  margin-bottom: 0.25rem;
+  color: var(--color-grey);
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.25rem; }
+
 h4,
 .h4-title {
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.25rem;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 2.25rem; }

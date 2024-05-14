@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="../assets/css/section-hero.min.css" />
 	<link rel="stylesheet" href="../assets/css/section-projects.min.css" />
 	<link rel="stylesheet" href="../assets/css/section-brands.min.css" />
+	<link rel="stylesheet" href="../assets/css/section-team.min.css" />
 
 </head>
 
@@ -20,6 +21,7 @@
 		<?php include('../components/sections/hero.php') ?>
 		<?php include('../components/sections/projects.php') ?>
 		<?php include('../components/sections/brands.php') ?>
+		<?php include('../components/sections/team.php') ?>
 	</main>
 	<?php include('../components/footer/_footer.php') ?>
 	<?php include('../components/elements/_cursor.php') ?>
@@ -32,6 +34,7 @@
 	<script src="../assets/js/section-hero.min.js"></script>
 	<script src="../assets/js/section-projects.min.js"></script>
 	<script src="../assets/js/section-brands.min.js"></script>
+	<script src="../assets/js/section-team.min.js"></script>
 </body>
 
 </html>

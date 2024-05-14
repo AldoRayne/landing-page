@@ -2,6 +2,8 @@
 @import "../common/mixins";
 
 .brands {
+  margin-bottom: r(244);
+  
   &__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
