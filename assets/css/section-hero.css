@@ -4,7 +4,7 @@
 /*images*/
 .hero {
   padding: 10.5rem 0 5.5rem; }
-  .hero__text span {
+  .hero__text .hero__word {
     display: inline-block;
     -webkit-transform: translateY(50%);
     -ms-transform: translateY(50%);

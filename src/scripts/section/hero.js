@@ -8,20 +8,13 @@ window.addEventListener("DOMContentLoaded", async () => {
 
         if (!heroTexts.length) return;
 
-        heroTexts.forEach((text) => {
-            const words = text.textContent.trim().split(" ");
-            text.textContent = "";
+        const splitText = new SplitText(".js-hero-text", { type: "words" });
 
-            words.forEach((word) => {
-                const span = document.createElement("span");
-                span.textContent = word;
-
-                text.append(span);
-                text.innerHTML += " ";
-            });
+        splitText.words.forEach((word) => {
+            word.classList.add("hero__word", "js-hero-word");
         });
 
-        await globalTl.to(".js-hero-text span", {
+        await globalTl.to(splitText.words, {
             y: 0,
             opacity: 1,
             duration: 0.4,

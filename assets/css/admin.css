@@ -175,7 +175,7 @@
     z-index: 9999; }
   .wp-block-post-content .hero {
     padding: 10.5rem 0 5.5rem; }
-    .wp-block-post-content .hero__text span {
+    .wp-block-post-content .hero__text .hero__word {
       display: inline-block;
       transform: translateY(50%);
       opacity: 0; }

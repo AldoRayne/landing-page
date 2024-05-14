@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    globalTl.to(".js-hero-text span", {
+    globalTl.to(".js-hero-word", {
         onComplete: () => projectsAnimation(),
     });
 
