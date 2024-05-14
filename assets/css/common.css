@@ -54,9 +54,6 @@ input, select, textarea, button {
 textarea:focus-visible {
   outline: 0; }
 
-* {
-  cursor: none; }
-
 html {
   font-size: 1.111vw; }
   @media only screen and (max-width: 375px) {
