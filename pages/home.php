@@ -26,6 +26,7 @@
 				<?php include('../components/sections/brands.php') ?>
 				<?php include('../components/sections/team.php') ?>
 				<?php include('../components/sections/services.php') ?>
+				<?php include('../components/sections/product-design.php') ?>
 			</main>
 			<?php include('../components/footer/_footer.php') ?>
 		</div>

@@ -3,9 +3,12 @@
   \*****************************************************************************************************************************************************************************************************************************/
 /*images*/
 .services {
-  margin-bottom: 15.5rem; }
+  margin-bottom: 2000px; }
+  .services__inner {
+    padding: 0 16rem 0 18rem; }
   .services__item {
-    max-width: 40rem; }
+    max-width: 40rem;
+    width: 100%; }
 
 
 /*# sourceMappingURL=section-services.css.map*/
