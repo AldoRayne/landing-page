@@ -2,10 +2,10 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         window.scrollTo(0, 0);
         document.querySelector("body").classList.add("overflow-hidden");
-        gsap.registerPlugin(ScrollTrigger, SplitText);
+        gsap.registerPlugin(ScrollSmoother, SplitText, ScrollTrigger);
 
         customCursor();
-        headerShowing();
+        smoothScrole();
 
         /** customCursor() init */
         function customCursor() {
@@ -19,11 +19,14 @@ window.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        /** headerShowing() init */
-        function headerShowing() {
-            const header = document.querySelector(".js-header");
-
-            if (!header) return;
+        /** smoothScrole() init */
+        function smoothScrole() {
+            ScrollSmoother.create({
+                wrapper: "#smooth__wrapper",
+                content: "#smooth__content",
+                smooth: 1.2,
+                effects: true,
+            });
         }
     }, 500);
 });

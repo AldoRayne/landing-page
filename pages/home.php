@@ -15,15 +15,19 @@
 </head>
 
 <body>
-	<?php include('../components/header/_header.php') ?>
-	<main>
-		<?php include('../components/sections/preloader.php') ?>
-		<?php include('../components/sections/hero.php') ?>
-		<?php include('../components/sections/projects.php') ?>
-		<?php include('../components/sections/brands.php') ?>
-		<?php include('../components/sections/team.php') ?>
-	</main>
-	<?php include('../components/footer/_footer.php') ?>
+	<div id="smooth__wrapper">
+		<div id="smooth__content">
+			<?php include('../components/header/_header.php') ?>
+			<main>
+				<?php include('../components/sections/preloader.php') ?>
+				<?php include('../components/sections/hero.php') ?>
+				<?php include('../components/sections/projects.php') ?>
+				<?php include('../components/sections/brands.php') ?>
+				<?php include('../components/sections/team.php') ?>
+			</main>
+			<?php include('../components/footer/_footer.php') ?>
+		</div>
+	</div>
 	<?php include('../components/elements/_cursor.php') ?>
 	<?php include('../components/scripts/_scripts.php') ?>
 	<script>
