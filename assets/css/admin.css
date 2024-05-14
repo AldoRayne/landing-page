@@ -150,6 +150,8 @@
       transition: color 300ms ease; }
   .wp-block-post-content .text-center {
     text-align: center; }
+  .wp-block-post-content .hidden {
+    opacity: 0; }
 
 @font-face {
   .wp-block-post-content {

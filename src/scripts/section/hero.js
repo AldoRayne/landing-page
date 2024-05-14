@@ -1,5 +1,9 @@
 window.addEventListener("DOMContentLoaded", () => {
     setTimeout(async () => {
+        globalTl.set(".js-hidden", {
+            opacity: 1,
+        });
+
         await heroTextAnimation();
         document.querySelector("body").classList.remove("overflow-hidden");
 
