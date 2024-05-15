@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     var servicesList = document.querySelectorAll(".js-services");
     if (!servicesList.length) return;
+    var tl = [];
     if (!document.querySelector(".js-hero__text")) {
       servicesAnimation();
       return;
@@ -22,53 +23,68 @@ window.addEventListener("DOMContentLoaded", function () {
         return servicesAnimation();
       }
     });
+    window.addEventListener("resize", function () {
+      return servicesAnimation(true);
+    });
 
     /** servicesAnimation() init */
     function servicesAnimation() {
-      servicesList.forEach(function (service) {
-        var servicesContent = service.querySelector(".js-services__content");
-        var scroll = service.querySelector(".js-services__scroll");
-        var servicesItems = service.querySelectorAll(".js-services__item");
-        var servicesImages = service.querySelectorAll(".js-services__image");
+      var resize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      servicesList.forEach(function (service, index) {
+        var timeout = 0;
         var imagesWrapper = service.querySelector(".js-services__images-wrapper");
-        var wrapperStyles = window.getComputedStyle(imagesWrapper);
-        var wrapperMarginTop = parseFloat(wrapperStyles.marginTop);
-        imagesWrapper.style.height = "".concat(window.innerHeight - servicesContent.offsetHeight - wrapperMarginTop, "px");
-        var scrollStyles = window.getComputedStyle(scroll);
-        var startValue = parseFloat(scrollStyles.paddingLeft) + imagesWrapper.offsetHeight;
-        var itemsArray = _toConsumableArray(Array.from(servicesItems));
-        itemsArray.pop();
-        var totalWidth = itemsArray.reduce(function (accumulatedWidth, item) {
-          return accumulatedWidth + getTotalWidthWithMargin(item);
-        }, startValue);
-        var tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: service,
-            pin: true,
-            scrub: true,
-            start: "top top",
-            end: function end() {
-              return "+=".concat(totalWidth);
-            }
+        if (resize) {
+          timeout = 200;
+          if (isGSAPInstance(tl[index])) {
+            tl[index].scrollTrigger.kill();
+            tl[index].kill();
           }
-        });
-        servicesItems.forEach(function (item, index) {
-          tl.to(servicesItems, {
-            xPercent: -110 * (index + 1),
-            ease: "none",
-            onUpdate: function onUpdate() {
-              servicesItems.forEach(function (s, i) {
-                if (i === Math.round(tl.progress() * (servicesItems.length - 1))) {
-                  s.classList.add("services__item_active");
-                  if (servicesImages.length) servicesImages[i].classList.add("services__image_active");
-                } else {
-                  s.classList.remove("services__item_active");
-                  if (servicesImages.length) servicesImages[i].classList.remove("services__image_active");
-                }
-              });
+          imagesWrapper.removeAttribute("style");
+        }
+        setTimeout(function () {
+          var servicesContent = service.querySelector(".js-services__content");
+          var scroll = service.querySelector(".js-services__scroll");
+          var servicesItems = service.querySelectorAll(".js-services__item");
+          var servicesImages = service.querySelectorAll(".js-services__image");
+          var wrapperStyles = window.getComputedStyle(imagesWrapper);
+          var wrapperMarginTop = parseFloat(wrapperStyles.marginTop);
+          imagesWrapper.style.height = "".concat(window.innerHeight - servicesContent.offsetHeight - wrapperMarginTop, "px");
+          var scrollStyles = window.getComputedStyle(scroll);
+          var startValue = parseFloat(scrollStyles.paddingLeft) + imagesWrapper.offsetHeight;
+          var itemsArray = _toConsumableArray(Array.from(servicesItems));
+          itemsArray.pop();
+          var totalWidth = itemsArray.reduce(function (accumulatedWidth, item) {
+            return accumulatedWidth + getTotalWidthWithMargin(item);
+          }, startValue);
+          tl[index] = gsap.timeline({
+            scrollTrigger: {
+              trigger: service,
+              pin: true,
+              scrub: true,
+              start: "top top",
+              end: function end() {
+                return "+=".concat(totalWidth);
+              }
             }
           });
-        });
+          servicesItems.forEach(function (item, idx) {
+            tl[index].to(servicesItems, {
+              xPercent: -110 * (idx + 1),
+              ease: "none",
+              onUpdate: function onUpdate() {
+                servicesItems.forEach(function (s, i) {
+                  if (i === Math.round(tl[index].progress() * (servicesItems.length - 1))) {
+                    s.classList.add("services__item_active");
+                    if (servicesImages.length) servicesImages[i].classList.add("services__image_active");
+                  } else {
+                    s.classList.remove("services__item_active");
+                    if (servicesImages.length) servicesImages[i].classList.remove("services__image_active");
+                  }
+                });
+              }
+            });
+          });
+        }, timeout);
       });
     }
 

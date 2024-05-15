@@ -4,6 +4,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if (!servicesList.length) return;
 
+        const tl = [];
+
         if (!document.querySelector(".js-hero__text")) {
             servicesAnimation();
             return;
@@ -13,60 +15,80 @@ window.addEventListener("DOMContentLoaded", () => {
             onComplete: () => servicesAnimation(),
         });
 
+        window.addEventListener("resize", () => servicesAnimation(true));
+
         /** servicesAnimation() init */
-        function servicesAnimation() {
-            servicesList.forEach((service) => {
-                const servicesContent = service.querySelector(".js-services__content");
-                const scroll = service.querySelector(".js-services__scroll");
-                const servicesItems = service.querySelectorAll(".js-services__item");
-                const servicesImages = service.querySelectorAll(".js-services__image");
+        function servicesAnimation(resize = false) {
+            servicesList.forEach((service, index) => {
+                let timeout = 0;
+
                 const imagesWrapper = service.querySelector(".js-services__images-wrapper");
 
-                const wrapperStyles = window.getComputedStyle(imagesWrapper);
-                const wrapperMarginTop = parseFloat(wrapperStyles.marginTop);
+                if (resize) {
+                    timeout = 200;
 
-                imagesWrapper.style.height = `${window.innerHeight - servicesContent.offsetHeight - wrapperMarginTop}px`;
+                    if (isGSAPInstance(tl[index])) {
+                        tl[index].scrollTrigger.kill();
+                        tl[index].kill();
+                    }
 
-                const scrollStyles = window.getComputedStyle(scroll);
-                const startValue = parseFloat(scrollStyles.paddingLeft) + imagesWrapper.offsetHeight;
+                    imagesWrapper.removeAttribute("style");
+                }
 
-                const itemsArray = [...Array.from(servicesItems)];
-                itemsArray.pop();
+                setTimeout(() => {
+                    const servicesContent = service.querySelector(".js-services__content");
+                    const scroll = service.querySelector(".js-services__scroll");
+                    const servicesItems = service.querySelectorAll(".js-services__item");
+                    const servicesImages = service.querySelectorAll(".js-services__image");
 
-                const totalWidth = itemsArray.reduce(
-                    (accumulatedWidth, item) => accumulatedWidth + getTotalWidthWithMargin(item),
-                    startValue
-                );
+                    const wrapperStyles = window.getComputedStyle(imagesWrapper);
+                    const wrapperMarginTop = parseFloat(wrapperStyles.marginTop);
 
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: service,
-                        pin: true,
-                        scrub: true,
-                        start: "top top",
-                        end: () => `+=${totalWidth}`,
-                    },
-                });
+                    imagesWrapper.style.height = `${
+                        window.innerHeight - servicesContent.offsetHeight - wrapperMarginTop
+                    }px`;
 
-                servicesItems.forEach((item, index) => {
-                    tl.to(servicesItems, {
-                        xPercent: -110 * (index + 1),
-                        ease: "none",
-                        onUpdate: () => {
-                            servicesItems.forEach((s, i) => {
-                                if (i === Math.round(tl.progress() * (servicesItems.length - 1))) {
-                                    s.classList.add("services__item_active");
-                                    if (servicesImages.length)
-                                        servicesImages[i].classList.add("services__image_active");
-                                } else {
-                                    s.classList.remove("services__item_active");
-                                    if (servicesImages.length)
-                                        servicesImages[i].classList.remove("services__image_active");
-                                }
-                            });
+                    const scrollStyles = window.getComputedStyle(scroll);
+                    const startValue = parseFloat(scrollStyles.paddingLeft) + imagesWrapper.offsetHeight;
+
+                    const itemsArray = [...Array.from(servicesItems)];
+                    itemsArray.pop();
+
+                    const totalWidth = itemsArray.reduce(
+                        (accumulatedWidth, item) => accumulatedWidth + getTotalWidthWithMargin(item),
+                        startValue
+                    );
+
+                    tl[index] = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: service,
+                            pin: true,
+                            scrub: true,
+                            start: "top top",
+                            end: () => `+=${totalWidth}`,
                         },
                     });
-                });
+
+                    servicesItems.forEach((item, idx) => {
+                        tl[index].to(servicesItems, {
+                            xPercent: -110 * (idx + 1),
+                            ease: "none",
+                            onUpdate: () => {
+                                servicesItems.forEach((s, i) => {
+                                    if (i === Math.round(tl[index].progress() * (servicesItems.length - 1))) {
+                                        s.classList.add("services__item_active");
+                                        if (servicesImages.length)
+                                            servicesImages[i].classList.add("services__image_active");
+                                    } else {
+                                        s.classList.remove("services__item_active");
+                                        if (servicesImages.length)
+                                            servicesImages[i].classList.remove("services__image_active");
+                                    }
+                                });
+                            },
+                        });
+                    });
+                }, timeout);
             });
         }
 

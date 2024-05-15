@@ -15,16 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
             onComplete: () => teamAnimation(),
         });
 
-        // let defaultWidth = window.innerWidth;
-
-        window.addEventListener("resize", () => {
-            // const currentWidth = window.innerWidth;
-
-            // if (defaultWidth === currentWidth) return;
-
-            // defaultWidth = currentWidth;
-            teamAnimation(true);
-        });
+        window.addEventListener("resize", () => teamAnimation(true));
 
         /** teamAnimation() init */
         function teamAnimation(resize = false) {
@@ -34,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 if (resize) {
                     timeout = 200;
-                    
+
                     if (isGSAPInstance(gs[index])) gs[index].scrollTrigger.kill();
                     imageWrappers.forEach((wrapper) => wrapper.removeAttribute("style"));
                 }

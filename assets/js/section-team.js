@@ -23,16 +23,8 @@ window.addEventListener("DOMContentLoaded", function () {
         return teamAnimation();
       }
     });
-
-    // let defaultWidth = window.innerWidth;
-
     window.addEventListener("resize", function () {
-      // const currentWidth = window.innerWidth;
-
-      // if (defaultWidth === currentWidth) return;
-
-      // defaultWidth = currentWidth;
-      teamAnimation(true);
+      return teamAnimation(true);
     });
 
     /** teamAnimation() init */
