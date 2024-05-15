@@ -35,8 +35,8 @@ window.addEventListener("DOMContentLoaded", function () {
         var imagesWrapper = service.querySelector(".js-services__images-wrapper");
         if (resize) {
           timeout = 200;
-          if (isGSAPInstance(tl[index])) {
-            tl[index].scrollTrigger.kill();
+          if (tl[index].scrollTrigger) {
+            tl[index].scrollTrigger.kill(true);
             tl[index].kill();
           }
           imagesWrapper.removeAttribute("style");
@@ -94,11 +94,6 @@ window.addEventListener("DOMContentLoaded", function () {
       var itemStyles = window.getComputedStyle(element);
       var marginRight = parseFloat(itemStyles.marginRight);
       return itemWidth + marginRight;
-    }
-
-    /** isGSAPInstance() init */
-    function isGSAPInstance(value) {
-      return value && typeof value.play === "function" && typeof value.pause === "function";
     }
   }, 500);
 });

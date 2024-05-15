@@ -96,7 +96,7 @@
 		<div class="team__item js-team__item">
 			<div class="team__image-wrapper js-team__image-wrapper">
 				<img src="../assets/img/team/Vasya-min.png" width="528" height="640" loading="lazy" alt="Vasya" class="team__image">
-				<img src="../assets/img/team/Vasya-min.png" width="528" height="640" loading="lazy" alt="Vasya" class="team__image team__image_hover">
+				<img src="../assets/img/team/Vasya hover-min.png" width="528" height="640" loading="lazy" alt="Vasya" class="team__image team__image_hover">
 			</div>
 			<div class="js-team__description">
 				<h4 class="h4-title">Vasily Tyvonchuk</h4>
@@ -106,7 +106,7 @@
 		<div class="team__item js-team__item">
 			<div class="team__image-wrapper js-team__image-wrapper">
 				<img src="../assets/img/team/Nazar-min.png" width="528" height="640" loading="lazy" alt="Nazar" class="team__image">
-				<img src="../assets/img/team/Nazar-min.png" width="528" height="640" loading="lazy" alt="Nazar" class="team__image team__image_hover">
+				<img src="../assets/img/team/Nazar hover-min.png" width="528" height="640" loading="lazy" alt="Nazar" class="team__image team__image_hover">
 			</div>
 			<div class="js-team__description">
 				<h4 class="h4-title">Nazariy Mynzak</h4>

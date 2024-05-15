@@ -15,8 +15,8 @@
     flex-shrink: 0; }
   .team__image-wrapper {
     margin-bottom: 0.75rem;
+    max-height: 30rem;
     width: 26rem;
-    height: 30rem;
     position: relative;
     overflow: hidden; }
     @media (hover: hover) {
@@ -30,10 +30,13 @@
         .team__image-wrapper:active .team__image_hover {
           opacity: 1; } }
   .team__image {
+    max-height: 30rem;
     width: 100%;
-    height: auto;
+    height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+    -o-object-position: top;
+    object-position: top;
     -webkit-transition: opacity 300ms ease;
     transition: opacity 300ms ease; }
     .team__image_hover {

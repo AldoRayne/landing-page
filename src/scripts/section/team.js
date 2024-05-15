@@ -15,24 +15,35 @@ window.addEventListener("DOMContentLoaded", () => {
             onComplete: () => teamAnimation(),
         });
 
-        window.addEventListener("resize", () => teamAnimation(true));
+        let resizeTimer = null;
+
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                teamAnimation(true);
+            }, 500);
+        });
 
         /** teamAnimation() init */
         function teamAnimation(resize = false) {
-            teamsList.forEach((team, index) => {
+            teamsList.forEach(async (team, index) => {
                 const imageWrappers = team.querySelectorAll(".js-team__image-wrapper");
+
                 let timeout = 0;
 
                 if (resize) {
-                    timeout = 200;
+                    timeout = 500;
 
-                    if (isGSAPInstance(gs[index])) gs[index].scrollTrigger.kill();
-                    imageWrappers.forEach((wrapper) => wrapper.removeAttribute("style"));
+                    if (gs[index]) {
+                        if (gs[index].scrollTrigger) gs[index].scrollTrigger.kill(true);
+                        gs[index].kill(true);
+
+                        imageWrappers.forEach((wrapper) => wrapper.removeAttribute("style"));
+                    }
                 }
-
                 setTimeout(() => {
-                    const teamTitle = team.querySelector(".js-team__title");
                     const scroll = team.querySelector(".js-team__scroll");
+                    const teamTitle = team.querySelector(".js-team__title");
                     const teamItems = team.querySelectorAll(".js-team__item");
                     const teamDescription = team.querySelector(".js-team__description");
 
@@ -76,6 +87,8 @@ window.addEventListener("DOMContentLoaded", () => {
                             end: () => `+=${totalWidth}`,
                         },
                     });
+
+                    console.log(gs[index]);
                 }, timeout);
             });
         }
@@ -90,8 +103,5 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
         /** isGSAPInstance() init */
-        function isGSAPInstance(value) {
-            return value && typeof value.play === "function" && typeof value.pause === "function";
-        }
     }, 500);
 });
