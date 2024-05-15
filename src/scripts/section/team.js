@@ -31,8 +31,29 @@ window.addEventListener("DOMContentLoaded", () => {
             teamsList.forEach((team) => {
                 if (resize && isGSAPInstance(gs)) gs.scrollTrigger.kill();
 
+                const teamTitle = team.querySelector(".js-team__title");
                 const scroll = team.querySelector(".js-team__scroll");
                 const teamItems = team.querySelectorAll(".js-team__item");
+                const imageWrappers = team.querySelectorAll(".js-team__image-wrapper");
+                const teamDescription = team.querySelector(".js-team__description");
+
+                const titleStyles = window.getComputedStyle(teamTitle);
+                const titleMarginBottom = parseFloat(titleStyles.marginBottom);
+
+                const wrapperStyles = window.getComputedStyle(imageWrappers[0]);
+                const wrapperMarginBottom = parseFloat(wrapperStyles.marginBottom);
+
+                const imageWrapperHeight = `${
+                    window.innerHeight -
+                    teamTitle.offsetHeight -
+                    titleMarginBottom -
+                    teamDescription.offsetHeight -
+                    wrapperMarginBottom
+                }px`;
+
+                imageWrappers.forEach((wrapper) => {
+                    wrapper.style.height = imageWrapperHeight;
+                });
 
                 const scrollStyles = window.getComputedStyle(scroll);
                 const startValue = parseFloat(scrollStyles.paddingLeft);

@@ -36,8 +36,19 @@ window.addEventListener("DOMContentLoaded", function () {
       var resize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
       teamsList.forEach(function (team) {
         if (resize && isGSAPInstance(gs)) gs.scrollTrigger.kill();
+        var teamTitle = team.querySelector(".js-team__title");
         var scroll = team.querySelector(".js-team__scroll");
         var teamItems = team.querySelectorAll(".js-team__item");
+        var imageWrappers = team.querySelectorAll(".js-team__image-wrapper");
+        var teamDescription = team.querySelector(".js-team__description");
+        var titleStyles = window.getComputedStyle(teamTitle);
+        var titleMarginBottom = parseFloat(titleStyles.marginBottom);
+        var wrapperStyles = window.getComputedStyle(imageWrappers[0]);
+        var wrapperMarginBottom = parseFloat(wrapperStyles.marginBottom);
+        var imageWrapperHeight = "".concat(window.innerHeight - teamTitle.offsetHeight - titleMarginBottom - teamDescription.offsetHeight - wrapperMarginBottom, "px");
+        imageWrappers.forEach(function (wrapper) {
+          wrapper.style.height = imageWrapperHeight;
+        });
         var scrollStyles = window.getComputedStyle(scroll);
         var startValue = parseFloat(scrollStyles.paddingLeft);
         var itemsArray = _toConsumableArray(Array.from(teamItems));

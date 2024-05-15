@@ -17,7 +17,7 @@
   &__image-wrapper {
     margin-bottom: r(12);
     width: r(416);
-    height: r(480);
+    // height: r(480);
     position: relative;
     overflow: hidden;
 
@@ -35,9 +35,11 @@
   }
 
   &__image {
+    max-height: r(480);
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    object-position: top;
     transition: opacity 300ms ease;
 
     &_hover {
