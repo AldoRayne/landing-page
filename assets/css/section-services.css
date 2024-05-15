@@ -20,6 +20,29 @@
     .services__item > * {
       -webkit-transition: color 300ms ease;
       transition: color 300ms ease; }
+  .services__images-wrapper {
+    margin: 6rem 0 0 auto;
+    max-width: 72rem;
+    max-height: 27.5rem;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+  .services__image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -o-object-fit: cover;
+    object-fit: cover; }
 
 
 /*# sourceMappingURL=section-services.css.map*/

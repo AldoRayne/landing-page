@@ -23,4 +23,24 @@
       transition: color 300ms ease;
     }
   }
+
+  &__images-wrapper {
+    margin: r(96) 0 0 auto;
+    max-width: r(1152);
+    max-height: r(440);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+  }
 }

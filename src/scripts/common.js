@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
         gsap.registerPlugin(ScrollSmoother, SplitText, ScrollTrigger);
 
         customCursor();
-        smoothScrole();
+        // smoothScrole();
 
         /** customCursor() init */
         function customCursor() {

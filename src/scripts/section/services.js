@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
         servicesList.forEach((service) => {
             const scroll = service.querySelector(".js-services__scroll");
             const servicesItems = service.querySelectorAll(".js-services__item");
+            const servicesImages = service.querySelectorAll(".js-services__image");
 
             const scrollStyles = window.getComputedStyle(scroll);
             const startValue = parseFloat(scrollStyles.paddingLeft);
@@ -37,8 +38,10 @@ window.addEventListener("DOMContentLoaded", () => {
                         servicesItems.forEach((s, i) => {
                             if (i === Math.round(tl.progress() * (servicesItems.length - 1))) {
                                 s.classList.add("services__item_active");
+                                servicesImages[i].classList.add("services__images_active");
                             } else {
                                 s.classList.remove("services__item_active");
+                                servicesImages[i].classList.remove("services__images_active");
                             }
                         });
                     },

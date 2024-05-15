@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
     servicesList.forEach(function (service) {
       var scroll = service.querySelector(".js-services__scroll");
       var servicesItems = service.querySelectorAll(".js-services__item");
+      var servicesImages = service.querySelectorAll(".js-services__image");
       var scrollStyles = window.getComputedStyle(scroll);
       var startValue = parseFloat(scrollStyles.paddingLeft);
       var itemsArray = _toConsumableArray(Array.from(servicesItems));
@@ -42,8 +43,10 @@ window.addEventListener("DOMContentLoaded", function () {
             servicesItems.forEach(function (s, i) {
               if (i === Math.round(tl.progress() * (servicesItems.length - 1))) {
                 s.classList.add("services__item_active");
+                servicesImages[i].classList.add("services__images_active");
               } else {
                 s.classList.remove("services__item_active");
+                servicesImages[i].classList.remove("services__images_active");
               }
             });
           }
