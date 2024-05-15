@@ -8,6 +8,7 @@
     --color-primary: #000;
     --color-text: #fff;
     --color-grey: #b8bec8;
+    --color-grey-medium: #3b3d40;
     --color-grey-dark: #18181a;
     --font-main: "EpilogueFont", sans-serif; }
   .wp-block-post-content * {
@@ -45,6 +46,11 @@
     font-family: 'Roboto', 'Arial', sans-serif; }
   .wp-block-post-content textarea:focus-visible {
     outline: 0; }
+  .wp-block-post-content * {
+    cursor: none; }
+  .wp-block-post-content html,
+  .wp-block-post-content body {
+    overflow-x: hidden; }
   .wp-block-post-content html {
     font-size: 1.111vw; }
     @media only screen and (max-width: 375px) {
@@ -57,6 +63,7 @@
     line-height: 1.5rem;
     background-color: var(--color-primary); }
     .wp-block-post-content body.overflow-hidden {
+      height: 100vh !important;
       overflow: hidden; }
   .wp-block-post-content .container {
     margin: 0 auto;
@@ -84,12 +91,20 @@
     font-size: 2.5rem;
     font-weight: 400;
     line-height: 3rem; }
+  .wp-block-post-content .h3-title_small-indent {
+    margin-bottom: 1.5rem; }
   .wp-block-post-content h4,
   .wp-block-post-content .h4-title {
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.25rem;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2.25rem; }
+  .wp-block-post-content .description {
+    color: var(--color-grey); }
+    .wp-block-post-content .description_small {
+      margin-bottom: 0.25rem;
+      font-size: 0.75rem;
+      line-height: 1.25rem; }
   .wp-block-post-content .button {
     padding: 0.625rem 1rem 0.625rem 2rem;
     width: fit-content;
@@ -153,7 +168,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: inherit;
+    background-color: var(--color-primary);
     z-index: 1; }
     .wp-block-post-content .header__content {
       display: flex;

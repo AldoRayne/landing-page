@@ -1,0 +1,52 @@
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/section/services.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*images*/
+.services {
+  margin-bottom: 15.5rem; }
+  .services__scroll {
+    padding-left: 18rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .services__item {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 16rem;
+    max-width: 40rem;
+    width: 100%; }
+    .services__item:not(.services__item_active) > * {
+      color: var(--color-grey-medium); }
+    .services__item > * {
+      -webkit-transition: color 300ms ease;
+      transition: color 300ms ease; }
+  .services__images-wrapper {
+    margin: 6rem 0 0 auto;
+    max-width: 72rem;
+    max-height: 27.5rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+  .services__image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -o-object-fit: cover;
+    object-fit: cover;
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease;
+    transition: opacity 300ms ease; }
+    .services__image_active {
+      opacity: 1; }
+
+
+/*# sourceMappingURL=section-services.css.map*/

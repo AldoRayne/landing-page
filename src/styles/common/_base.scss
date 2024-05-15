@@ -1,6 +1,11 @@
-// * {
-//   cursor: none;
-// }
+* {
+  cursor: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
 
 html {
   font-size: $fontSizeLg;
@@ -18,6 +23,7 @@ body {
   background-color: $primaryColor;
 
   &.overflow-hidden {
+    height: 100vh !important;
     overflow: hidden;
   }
 }
@@ -60,12 +66,28 @@ h3,
   line-height: r(48);
 }
 
+.h3-title {
+  &_small-indent {
+    margin-bottom: r(24);
+  }
+}
+
 h4,
 .h4-title {
-  margin-bottom: r(56);
+  margin-bottom: r(20);
   font-size: r(24);
   font-weight: 400;
   line-height: r(36);
+}
+
+.description {
+  color: $greyColor;
+
+  &_small {
+    margin-bottom: r(4);
+    font-size: r(12);
+    line-height: r(20);
+  }
 }
 
 .button {

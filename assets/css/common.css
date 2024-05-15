@@ -5,6 +5,7 @@
   --color-primary: #000;
   --color-text: #fff;
   --color-grey: #b8bec8;
+  --color-grey-medium: #3b3d40;
   --color-grey-dark: #18181a;
   --font-main: "EpilogueFont", sans-serif; }
 
@@ -54,6 +55,13 @@ input, select, textarea, button {
 textarea:focus-visible {
   outline: 0; }
 
+* {
+  cursor: none; }
+
+html,
+body {
+  overflow-x: hidden; }
+
 html {
   font-size: 1.111vw; }
   @media only screen and (max-width: 375px) {
@@ -67,6 +75,7 @@ body {
   line-height: 1.5rem;
   background-color: var(--color-primary); }
   body.overflow-hidden {
+    height: 100vh !important;
     overflow: hidden; }
 
 .container {
@@ -99,12 +108,22 @@ h3,
   font-weight: 400;
   line-height: 3rem; }
 
+.h3-title_small-indent {
+  margin-bottom: 1.5rem; }
+
 h4,
 .h4-title {
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.25rem;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 2.25rem; }
+
+.description {
+  color: var(--color-grey); }
+  .description_small {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem; }
 
 .button {
   padding: 0.625rem 1rem 0.625rem 2rem;
@@ -170,7 +189,7 @@ h4,
   position: fixed;
   top: 0;
   left: 0;
-  background-color: inherit;
+  background-color: var(--color-primary);
   z-index: 1; }
   .header__content {
     display: flex;
