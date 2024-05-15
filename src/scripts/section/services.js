@@ -15,7 +15,14 @@ window.addEventListener("DOMContentLoaded", () => {
             onComplete: () => servicesAnimation(),
         });
 
-        window.addEventListener("resize", () => servicesAnimation(true));
+        let resizeTimer = null;
+
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                servicesAnimation(true);
+            }, 500);
+        });
 
         /** servicesAnimation() init */
         function servicesAnimation(resize = false) {
@@ -25,14 +32,14 @@ window.addEventListener("DOMContentLoaded", () => {
                 const imagesWrapper = service.querySelector(".js-services__images-wrapper");
 
                 if (resize) {
-                    timeout = 200;
+                    timeout = 500;
 
-                    if (tl[index].scrollTrigger) {
-                        tl[index].scrollTrigger.kill(true);
-                        tl[index].kill();
+                    if (tl[index]) {
+                        if (tl[index].scrollTrigger) tl[index].scrollTrigger.kill(true);
+                        tl[index].kill(true);
+
+                        imagesWrapper.removeAttribute("style");
                     }
-
-                    imagesWrapper.removeAttribute("style");
                 }
 
                 setTimeout(() => {

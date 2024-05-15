@@ -23,8 +23,12 @@ window.addEventListener("DOMContentLoaded", function () {
         return servicesAnimation();
       }
     });
+    var resizeTimer = null;
     window.addEventListener("resize", function () {
-      return servicesAnimation(true);
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        servicesAnimation(true);
+      }, 500);
     });
 
     /** servicesAnimation() init */
@@ -34,12 +38,12 @@ window.addEventListener("DOMContentLoaded", function () {
         var timeout = 0;
         var imagesWrapper = service.querySelector(".js-services__images-wrapper");
         if (resize) {
-          timeout = 200;
-          if (tl[index].scrollTrigger) {
-            tl[index].scrollTrigger.kill(true);
-            tl[index].kill();
+          timeout = 500;
+          if (tl[index]) {
+            if (tl[index].scrollTrigger) tl[index].scrollTrigger.kill(true);
+            tl[index].kill(true);
+            imagesWrapper.removeAttribute("style");
           }
-          imagesWrapper.removeAttribute("style");
         }
         setTimeout(function () {
           var servicesContent = service.querySelector(".js-services__content");
