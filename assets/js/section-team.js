@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     var teamsList = document.querySelectorAll(".js-team");
     if (!teamsList.length) return;
-    var gs = null;
+    var gs = [];
     if (!document.querySelector(".js-hero__text")) {
       teamAnimation();
       return;
@@ -23,54 +23,67 @@ window.addEventListener("DOMContentLoaded", function () {
         return teamAnimation();
       }
     });
-    var defaultWidth = window.innerWidth;
+
+    // let defaultWidth = window.innerWidth;
+
     window.addEventListener("resize", function () {
-      var currentWidth = window.innerWidth;
-      if (defaultWidth === currentWidth) return;
-      defaultWidth = currentWidth;
+      // const currentWidth = window.innerWidth;
+
+      // if (defaultWidth === currentWidth) return;
+
+      // defaultWidth = currentWidth;
       teamAnimation(true);
     });
 
     /** teamAnimation() init */
     function teamAnimation() {
       var resize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-      teamsList.forEach(function (team) {
-        if (resize && isGSAPInstance(gs)) gs.scrollTrigger.kill();
-        var teamTitle = team.querySelector(".js-team__title");
-        var scroll = team.querySelector(".js-team__scroll");
-        var teamItems = team.querySelectorAll(".js-team__item");
+      teamsList.forEach(function (team, index) {
         var imageWrappers = team.querySelectorAll(".js-team__image-wrapper");
-        var teamDescription = team.querySelector(".js-team__description");
-        var titleStyles = window.getComputedStyle(teamTitle);
-        var titleMarginBottom = parseFloat(titleStyles.marginBottom);
-        var wrapperStyles = window.getComputedStyle(imageWrappers[0]);
-        var wrapperMarginBottom = parseFloat(wrapperStyles.marginBottom);
-        var imageWrapperHeight = "".concat(window.innerHeight - teamTitle.offsetHeight - titleMarginBottom - teamDescription.offsetHeight - wrapperMarginBottom, "px");
-        imageWrappers.forEach(function (wrapper) {
-          wrapper.style.height = imageWrapperHeight;
-        });
-        var scrollStyles = window.getComputedStyle(scroll);
-        var startValue = parseFloat(scrollStyles.paddingLeft);
-        var itemsArray = _toConsumableArray(Array.from(teamItems));
-        itemsArray.pop();
-        var totalWidth = itemsArray.reduce(function (accumulatedWidth, item) {
-          return accumulatedWidth + getTotalWidthWithMargin(item);
-        }, startValue);
-        gs = gsap.to(scroll, {
-          x: function x() {
-            return -totalWidth;
-          },
-          ease: "none",
-          scrollTrigger: {
-            trigger: team,
-            pin: true,
-            scrub: true,
-            start: "top top",
-            end: function end() {
-              return "+=".concat(totalWidth);
+        var timeout = 0;
+        if (resize) {
+          timeout = 200;
+          if (isGSAPInstance(gs[index])) gs[index].scrollTrigger.kill();
+          imageWrappers.forEach(function (wrapper) {
+            return wrapper.removeAttribute("style");
+          });
+        }
+        setTimeout(function () {
+          var teamTitle = team.querySelector(".js-team__title");
+          var scroll = team.querySelector(".js-team__scroll");
+          var teamItems = team.querySelectorAll(".js-team__item");
+          var teamDescription = team.querySelector(".js-team__description");
+          var titleStyles = window.getComputedStyle(teamTitle);
+          var titleMarginBottom = parseFloat(titleStyles.marginBottom);
+          var wrapperStyles = window.getComputedStyle(imageWrappers[0]);
+          var wrapperMarginBottom = parseFloat(wrapperStyles.marginBottom);
+          var imageWrapperHeight = "".concat(window.innerHeight - teamTitle.offsetHeight - titleMarginBottom - teamDescription.offsetHeight - wrapperMarginBottom, "px");
+          imageWrappers.forEach(function (wrapper) {
+            wrapper.style.height = imageWrapperHeight;
+          });
+          var scrollStyles = window.getComputedStyle(scroll);
+          var startValue = parseFloat(scrollStyles.paddingLeft);
+          var itemsArray = _toConsumableArray(Array.from(teamItems));
+          itemsArray.pop();
+          var totalWidth = itemsArray.reduce(function (accumulatedWidth, item) {
+            return accumulatedWidth + getTotalWidthWithMargin(item);
+          }, startValue);
+          gs[index] = gsap.to(scroll, {
+            x: function x() {
+              return -totalWidth;
+            },
+            ease: "none",
+            scrollTrigger: {
+              trigger: team,
+              pin: true,
+              scrub: true,
+              start: "top top",
+              end: function end() {
+                return "+=".concat(totalWidth);
+              }
             }
-          }
-        });
+          });
+        }, timeout);
       });
     }
 

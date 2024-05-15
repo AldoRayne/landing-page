@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if (!teamsList.length) return;
 
-        let gs = null;
+        const gs = [];
 
         if (!document.querySelector(".js-hero__text")) {
             teamAnimation();
@@ -15,68 +15,77 @@ window.addEventListener("DOMContentLoaded", () => {
             onComplete: () => teamAnimation(),
         });
 
-        let defaultWidth = window.innerWidth;
+        // let defaultWidth = window.innerWidth;
 
         window.addEventListener("resize", () => {
-            const currentWidth = window.innerWidth;
+            // const currentWidth = window.innerWidth;
 
-            if (defaultWidth === currentWidth) return;
+            // if (defaultWidth === currentWidth) return;
 
-            defaultWidth = currentWidth;
+            // defaultWidth = currentWidth;
             teamAnimation(true);
         });
 
         /** teamAnimation() init */
         function teamAnimation(resize = false) {
-            teamsList.forEach((team) => {
-                if (resize && isGSAPInstance(gs)) gs.scrollTrigger.kill();
-
-                const teamTitle = team.querySelector(".js-team__title");
-                const scroll = team.querySelector(".js-team__scroll");
-                const teamItems = team.querySelectorAll(".js-team__item");
+            teamsList.forEach((team, index) => {
                 const imageWrappers = team.querySelectorAll(".js-team__image-wrapper");
-                const teamDescription = team.querySelector(".js-team__description");
+                let timeout = 0;
 
-                const titleStyles = window.getComputedStyle(teamTitle);
-                const titleMarginBottom = parseFloat(titleStyles.marginBottom);
+                if (resize) {
+                    timeout = 200;
+                    
+                    if (isGSAPInstance(gs[index])) gs[index].scrollTrigger.kill();
+                    imageWrappers.forEach((wrapper) => wrapper.removeAttribute("style"));
+                }
 
-                const wrapperStyles = window.getComputedStyle(imageWrappers[0]);
-                const wrapperMarginBottom = parseFloat(wrapperStyles.marginBottom);
+                setTimeout(() => {
+                    const teamTitle = team.querySelector(".js-team__title");
+                    const scroll = team.querySelector(".js-team__scroll");
+                    const teamItems = team.querySelectorAll(".js-team__item");
+                    const teamDescription = team.querySelector(".js-team__description");
 
-                const imageWrapperHeight = `${
-                    window.innerHeight -
-                    teamTitle.offsetHeight -
-                    titleMarginBottom -
-                    teamDescription.offsetHeight -
-                    wrapperMarginBottom
-                }px`;
+                    const titleStyles = window.getComputedStyle(teamTitle);
+                    const titleMarginBottom = parseFloat(titleStyles.marginBottom);
 
-                imageWrappers.forEach((wrapper) => {
-                    wrapper.style.height = imageWrapperHeight;
-                });
+                    const wrapperStyles = window.getComputedStyle(imageWrappers[0]);
+                    const wrapperMarginBottom = parseFloat(wrapperStyles.marginBottom);
 
-                const scrollStyles = window.getComputedStyle(scroll);
-                const startValue = parseFloat(scrollStyles.paddingLeft);
+                    const imageWrapperHeight = `${
+                        window.innerHeight -
+                        teamTitle.offsetHeight -
+                        titleMarginBottom -
+                        teamDescription.offsetHeight -
+                        wrapperMarginBottom
+                    }px`;
 
-                const itemsArray = [...Array.from(teamItems)];
-                itemsArray.pop();
+                    imageWrappers.forEach((wrapper) => {
+                        wrapper.style.height = imageWrapperHeight;
+                    });
 
-                const totalWidth = itemsArray.reduce(
-                    (accumulatedWidth, item) => accumulatedWidth + getTotalWidthWithMargin(item),
-                    startValue
-                );
+                    const scrollStyles = window.getComputedStyle(scroll);
+                    const startValue = parseFloat(scrollStyles.paddingLeft);
 
-                gs = gsap.to(scroll, {
-                    x: () => -totalWidth,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: team,
-                        pin: true,
-                        scrub: true,
-                        start: "top top",
-                        end: () => `+=${totalWidth}`,
-                    },
-                });
+                    const itemsArray = [...Array.from(teamItems)];
+                    itemsArray.pop();
+
+                    const totalWidth = itemsArray.reduce(
+                        (accumulatedWidth, item) => accumulatedWidth + getTotalWidthWithMargin(item),
+                        startValue
+                    );
+
+                    gs[index] = gsap.to(scroll, {
+                        x: () => -totalWidth,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: team,
+                            pin: true,
+                            scrub: true,
+                            start: "top top",
+                            end: () => `+=${totalWidth}`,
+                        },
+                    });
+                }, timeout);
             });
         }
 
