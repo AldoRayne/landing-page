@@ -1,43 +1,63 @@
 window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
-        const servicesList = document.querySelectorAll(".js-service");
+        const servicesList = document.querySelectorAll(".js-services");
 
         if (!servicesList.length) return;
 
         servicesList.forEach((service) => {
-            const serviceSlider = service.querySelector(".js-service__swiper");
+            const scroll = service.querySelector(".js-services__scroll");
+            const servicesItems = service.querySelectorAll(".js-services__item");
 
-            const swiper = new Swiper(serviceSlider, {
-                slidesPerView: "auto",
-                spaceBetween: 256,
-                allowTouchMove: false,
-            });
+            const scrollStyles = window.getComputedStyle(scroll);
+            const startValue = parseFloat(scrollStyles.paddingLeft);
+
+            const itemsArray = [...Array.from(servicesItems)];
+            itemsArray.pop();
+
+            const totalWidth = itemsArray.reduce(
+                (accumulatedWidth, item) => accumulatedWidth + getTotalWidthWithMargin(item),
+                startValue
+            );
 
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: service,
-                    start: "top top",
-                    end: () => "+=" + (serviceSlider.querySelectorAll(".js-service__item").length) * window.innerHeight,
                     pin: true,
                     scrub: true,
+                    start: "top top",
+                    end: () => `+=${totalWidth}`,
                 },
             });
 
-            swiper.slides.forEach((slide, index) => {
-                tl.to(swiper.slides, {
+            servicesItems.forEach((item, index) => {
+                tl.to(servicesItems, {
                     xPercent: -100 * (index + 1),
                     ease: "none",
                     onUpdate: () => {
-                        swiper.slides.forEach((s, i) => {
-                            if (i === Math.round(tl.progress() * (swiper.slides.length - 1))) {
-                                s.classList.add("swiper-slide-active");
+                        servicesItems.forEach((s, i) => {
+                            if (i === Math.round(tl.progress() * (servicesItems.length - 1))) {
+                                s.classList.add("services__item_active");
                             } else {
-                                s.classList.remove("swiper-slide-active");
+                                s.classList.remove("services__item_active");
                             }
                         });
                     },
                 });
             });
         });
+
+        /** getTotalWidthWithMargin() init */
+        function getTotalWidthWithMargin(element) {
+            const itemWidth = element.getBoundingClientRect().width;
+            const itemStyles = window.getComputedStyle(element);
+            const marginRight = parseFloat(itemStyles.marginRight);
+
+            return itemWidth + marginRight;
+        }
+
+        /** isGSAPInstance() init */
+        function isGSAPInstance(value) {
+            return value && typeof value.play === "function" && typeof value.pause === "function";
+        }
     }, 500);
 });

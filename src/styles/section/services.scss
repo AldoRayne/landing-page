@@ -4,20 +4,23 @@
 .services {
   margin-bottom: r(248);
 
-  &__swiper {
-    padding: 0 r(256) 0 r(288);
+  &__scroll {
+    padding-left: r(288);
+    display: flex;
   }
 
   &__item {
+    flex-shrink: 0;
+    margin-right: r(256);
     max-width: r(640);
     width: 100%;
 
-    & > * {
-      transition: color 300ms ease;
+    &:not(&_active) > * {
+      color: $greyMediumColor;
     }
 
-    &:not(.swiper-slide-active) > * {
-      color: $greyMediumColor;
+    & > * {
+      transition: color 300ms ease;
     }
   }
 }
