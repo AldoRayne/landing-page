@@ -1,0 +1,21 @@
+.header {
+  padding: r(14) 0;
+  width: 100%;
+  height: r(64);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $primaryColor;
+  z-index: 1;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    max-width: r(107);
+    max-height: r(23);
+  }
+}

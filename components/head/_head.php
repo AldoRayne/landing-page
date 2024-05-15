@@ -3,8 +3,4 @@
 <!-- <link rel="icon" type="image/png" href="assets/img/favicon.png"> -->
 <!-- Styles for frontend -->
 <link rel="stylesheet" href="../assets/css/common.css" />
-
-
-<!--<link rel="stylesheet" href="assets/css/hero.css" />-->
 <!-- Styles for backend -->
-<!--<link rel="stylesheet" href="assets/css/app.min.css" />-->

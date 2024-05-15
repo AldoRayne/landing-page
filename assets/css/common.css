@@ -2,9 +2,12 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/common.scss ***!
   \*******************************************************************************************************************************************************************************************************************/
 :root {
-  --color-primary: #235ad1;
-  --color-text: #000;
-  --color-hover: #061e2f; }
+  --color-primary: #000;
+  --color-text: #fff;
+  --color-grey: #b8bec8;
+  --color-grey-medium: #3b3d40;
+  --color-grey-dark: #18181a;
+  --font-main: "EpilogueFont", sans-serif; }
 
 /*images*/
 * {
@@ -52,49 +55,159 @@ input, select, textarea, button {
 textarea:focus-visible {
   outline: 0; }
 
+* {
+  cursor: none; }
+
+html,
+body {
+  overflow-x: hidden; }
+
 html {
-  -webkit-tap-highlight-color: transparent !important;
-  font-size: 16px; }
-  @media only screen and (min-width: 768px) {
+  font-size: 1.111vw; }
+  @media only screen and (max-width: 375px) {
     html {
-      font-size: 1.3vw; } }
-  @media only screen and (min-width: 1200px) {
-    html {
-      font-size: 0.833vw; } }
+      font-size: 16px; } }
 
 body {
-  position: relative;
-  margin: auto;
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.75;
-  color: var(--color-text); }
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-weight: 300;
+  line-height: 1.5rem;
+  background-color: var(--color-primary); }
+  body.overflow-hidden {
+    height: 100vh !important;
+    overflow: hidden; }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 0.75rem; }
-  .container__test {
-    padding: 0 0.75rem; }
+  padding: 0 1.5rem;
+  max-width: 85rem;
+  width: 100%; }
+  .container_small {
+    max-width: 71rem; }
 
-.main-menu {
+h2,
+.h2-title {
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 4.5rem; }
+  @media only screen and (max-width: 375px) {
+    h2,
+    .h2-title {
+      font-size: 2rem;
+      line-height: 2.5rem; } }
+
+.h2-title_small-indent {
+  margin-bottom: 2rem; }
+
+h3,
+.h3-title {
+  margin-bottom: 3.5rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem; }
+
+.h3-title_small-indent {
+  margin-bottom: 1.5rem; }
+
+h4,
+.h4-title {
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.25rem; }
+
+.description {
+  color: var(--color-grey); }
+  .description_small {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem; }
+
+.button {
+  padding: 0.625rem 1rem 0.625rem 2rem;
+  width: fit-content;
   display: flex;
-  list-style: none; }
+  align-items: center;
+  position: relative;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: var(--color-text);
+  border: none;
+  border-radius: 12.5rem; }
+  @media (hover: hover) {
+    .button:hover:before {
+      width: calc(100% + 2px);
+      height: 100%;
+      left: -1px;
+      border-radius: 12.5rem; }
+    .button:hover .button__text {
+      color: var(--color-text); } }
+  @media (hover: none) {
+    .button:active:before {
+      width: calc(100% + 2px);
+      height: 100%;
+      left: -1px;
+      border-radius: 12.5rem; }
+    .button:active .button__text {
+      color: var(--color-text); } }
+  .button:before {
+    content: "";
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    position: absolute;
+    top: 50%;
+    left: 0.8125rem;
+    transform: translateY(-50%);
+    background-color: var(--color-primary);
+    border-radius: 100%;
+    transition: all 300ms ease; }
+  .button__text {
+    position: relative;
+    z-index: 1;
+    color: var(--color-primary);
+    transition: color 300ms ease; }
 
-a {
-  color: var(--color-text); }
-
-.icon {
-  fill: currentColor;
-  stroke: currentColor; }
+.text-center {
+  text-align: center; }
 
 @font-face {
-  font-family: "Roboto";
-  src: url(../.././assets/fonts/RobotoBold.woff) format("woff");
-  font-weight: 700;
+  font-family: "EpilogueFont";
+  src: url(../.././assets/fonts/Epilogue-VariableFont_wght.ttf) format("ttf");
+  font-weight: 300;
   font-style: normal;
   font-display: swap; }
+
+.header {
+  padding: 0.875rem 0;
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  z-index: 1; }
+  .header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .header__logo {
+    max-width: 6.6875rem;
+    max-height: 1.4375rem; }
+
+.cursor {
+  position: fixed;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--color-text);
+  border-radius: 100%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999; }
 
 
 /*# sourceMappingURL=common.css.map*/

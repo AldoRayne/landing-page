@@ -1,3 +1,33 @@
-@import "../common/mixins";
 @import "../common/variable";
-@import "../element/productcard";
+@import "../common/mixins";
+
+.hero {
+  padding: r(168) 0 r(88);
+
+  &__text {
+    .hero__word {
+      display: inline-block;
+      transform: translateY(50%);
+      opacity: 0;
+    }
+  }
+
+  &__heading {
+    max-width: r(1050);
+  }
+
+  &__description {
+    margin-left: auto;
+    max-width: r(416);
+    color: $greyColor;
+    font-weight: 300;
+
+    @include min-small {
+      padding-right: r(82);
+    }
+
+    @include max-small {
+      max-width: r(231);
+    }
+  }
+}
