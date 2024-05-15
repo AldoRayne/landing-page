@@ -19,9 +19,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 const scroll = service.querySelector(".js-services__scroll");
                 const servicesItems = service.querySelectorAll(".js-services__item");
                 const servicesImages = service.querySelectorAll(".js-services__image");
+                const imagesWrapper = service.querySelector(".js-services__images-wrapper");
 
                 const scrollStyles = window.getComputedStyle(scroll);
-                const startValue = parseFloat(scrollStyles.paddingLeft);
+                const startValue = parseFloat(scrollStyles.paddingLeft) + imagesWrapper.offsetHeight;
 
                 const itemsArray = [...Array.from(servicesItems)];
                 itemsArray.pop();

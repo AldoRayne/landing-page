@@ -25,7 +25,7 @@
 			</p>
 		</div>
 	</div>
-	<div class="services__images-wrapper">
+	<div class="services__images-wrapper js-services__images-wrapper">
 		<img src="../assets/img/services/Pic-min.png" width="1616" height="596" loading="lazy" alt="Pic" class="services__image services__image_active js-services__image">
 		<img src="../assets/img/services/Pic-2-min.png" width="1616" height="596" loading="lazy" alt="Pic 2" class="services__image js-services__image">
 		<img src="../assets/img/services/Pic-3-min.png" width="1616" height="596" loading="lazy" alt="Pic 3" class="services__image js-services__image">

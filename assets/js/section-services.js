@@ -29,8 +29,9 @@ window.addEventListener("DOMContentLoaded", function () {
         var scroll = service.querySelector(".js-services__scroll");
         var servicesItems = service.querySelectorAll(".js-services__item");
         var servicesImages = service.querySelectorAll(".js-services__image");
+        var imagesWrapper = service.querySelector(".js-services__images-wrapper");
         var scrollStyles = window.getComputedStyle(scroll);
-        var startValue = parseFloat(scrollStyles.paddingLeft);
+        var startValue = parseFloat(scrollStyles.paddingLeft) + imagesWrapper.offsetHeight;
         var itemsArray = _toConsumableArray(Array.from(servicesItems));
         itemsArray.pop();
         var totalWidth = itemsArray.reduce(function (accumulatedWidth, item) {
