@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", function () {
       });
       servicesItems.forEach(function (item, index) {
         tl.to(servicesItems, {
-          xPercent: -100 * (index + 1),
+          xPercent: -120 * (index + 1),
           ease: "none",
           onUpdate: function onUpdate() {
             servicesItems.forEach(function (s, i) {
