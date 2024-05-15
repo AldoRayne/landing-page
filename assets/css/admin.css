@@ -63,7 +63,7 @@
     line-height: 1.5rem;
     background-color: var(--color-primary); }
     .wp-block-post-content body.overflow-hidden {
-      height: 100vh;
+      height: 100vh !important;
       overflow: hidden; }
   .wp-block-post-content .container {
     margin: 0 auto;

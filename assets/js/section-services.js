@@ -28,7 +28,6 @@ window.addEventListener("DOMContentLoaded", function () {
       swiper.slides.forEach(function (slide, index) {
         tl.to(swiper.slides, {
           xPercent: -100 * (index + 1),
-          duration: 1,
           ease: "none",
           onUpdate: function onUpdate() {
             swiper.slides.forEach(function (s, i) {

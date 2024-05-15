@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 scrollTrigger: {
                     trigger: service,
                     start: "top top",
-                    end: () => "+=" + serviceSlider.querySelectorAll(".js-service__item").length * window.innerHeight,
+                    end: () => "+=" + (serviceSlider.querySelectorAll(".js-service__item").length) * window.innerHeight,
                     pin: true,
                     scrub: true,
                 },
@@ -26,7 +26,6 @@ window.addEventListener("DOMContentLoaded", () => {
             swiper.slides.forEach((slide, index) => {
                 tl.to(swiper.slides, {
                     xPercent: -100 * (index + 1),
-                    duration: 1,
                     ease: "none",
                     onUpdate: () => {
                         swiper.slides.forEach((s, i) => {
