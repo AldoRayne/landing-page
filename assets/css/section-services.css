@@ -42,7 +42,12 @@
     height: 100%;
     position: absolute;
     -o-object-fit: cover;
-    object-fit: cover; }
+    object-fit: cover;
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease;
+    transition: opacity 300ms ease; }
+    .services__image_active {
+      opacity: 1; }
 
 
 /*# sourceMappingURL=section-services.css.map*/

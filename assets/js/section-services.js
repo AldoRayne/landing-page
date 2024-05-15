@@ -13,46 +13,59 @@ window.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     var servicesList = document.querySelectorAll(".js-services");
     if (!servicesList.length) return;
-    servicesList.forEach(function (service) {
-      var scroll = service.querySelector(".js-services__scroll");
-      var servicesItems = service.querySelectorAll(".js-services__item");
-      var servicesImages = service.querySelectorAll(".js-services__image");
-      var scrollStyles = window.getComputedStyle(scroll);
-      var startValue = parseFloat(scrollStyles.paddingLeft);
-      var itemsArray = _toConsumableArray(Array.from(servicesItems));
-      itemsArray.pop();
-      var totalWidth = itemsArray.reduce(function (accumulatedWidth, item) {
-        return accumulatedWidth + getTotalWidthWithMargin(item);
-      }, startValue);
-      var tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: service,
-          pin: true,
-          scrub: true,
-          start: "top top",
-          end: function end() {
-            return "+=".concat(totalWidth);
-          }
-        }
-      });
-      servicesItems.forEach(function (item, index) {
-        tl.to(servicesItems, {
-          xPercent: -120 * (index + 1),
-          ease: "none",
-          onUpdate: function onUpdate() {
-            servicesItems.forEach(function (s, i) {
-              if (i === Math.round(tl.progress() * (servicesItems.length - 1))) {
-                s.classList.add("services__item_active");
-                servicesImages[i].classList.add("services__images_active");
-              } else {
-                s.classList.remove("services__item_active");
-                servicesImages[i].classList.remove("services__images_active");
-              }
-            });
+    if (!document.querySelector(".js-hero__text")) {
+      servicesAnimation();
+      return;
+    }
+    globalTl.to(".js-hero__word", {
+      onComplete: function onComplete() {
+        return servicesAnimation();
+      }
+    });
+
+    /** servicesAnimation() init */
+    function servicesAnimation() {
+      servicesList.forEach(function (service) {
+        var scroll = service.querySelector(".js-services__scroll");
+        var servicesItems = service.querySelectorAll(".js-services__item");
+        var servicesImages = service.querySelectorAll(".js-services__image");
+        var scrollStyles = window.getComputedStyle(scroll);
+        var startValue = parseFloat(scrollStyles.paddingLeft);
+        var itemsArray = _toConsumableArray(Array.from(servicesItems));
+        itemsArray.pop();
+        var totalWidth = itemsArray.reduce(function (accumulatedWidth, item) {
+          return accumulatedWidth + getTotalWidthWithMargin(item);
+        }, startValue);
+        var tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: service,
+            pin: true,
+            scrub: true,
+            start: "top top",
+            end: function end() {
+              return "+=".concat(totalWidth);
+            }
           }
         });
+        servicesItems.forEach(function (item, index) {
+          tl.to(servicesItems, {
+            xPercent: -120 * (index + 1),
+            ease: "none",
+            onUpdate: function onUpdate() {
+              servicesItems.forEach(function (s, i) {
+                if (i === Math.round(tl.progress() * (servicesItems.length - 1))) {
+                  s.classList.add("services__item_active");
+                  if (servicesImages.length) servicesImages[i].classList.add("services__image_active");
+                } else {
+                  s.classList.remove("services__item_active");
+                  if (servicesImages.length) servicesImages[i].classList.remove("services__image_active");
+                }
+              });
+            }
+          });
+        });
       });
-    });
+    }
 
     /** getTotalWidthWithMargin() init */
     function getTotalWidthWithMargin(element) {

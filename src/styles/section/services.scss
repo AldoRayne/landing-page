@@ -42,5 +42,11 @@
     height: 100%;
     position: absolute;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 300ms ease;
+
+    &_active {
+      opacity: 1;
+    }
   }
 }
