@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function () {
     document.querySelector("body").classList.add("overflow-hidden");
     gsap.registerPlugin(ScrollSmoother, SplitText, ScrollTrigger);
     customCursor();
-    // smoothScrole();
+    smoothScrole();
 
     /** customCursor() init */
     function customCursor() {

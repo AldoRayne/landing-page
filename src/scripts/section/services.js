@@ -16,10 +16,16 @@ window.addEventListener("DOMContentLoaded", () => {
         /** servicesAnimation() init */
         function servicesAnimation() {
             servicesList.forEach((service) => {
+                const servicesContent = service.querySelector(".js-services__content");
                 const scroll = service.querySelector(".js-services__scroll");
                 const servicesItems = service.querySelectorAll(".js-services__item");
                 const servicesImages = service.querySelectorAll(".js-services__image");
                 const imagesWrapper = service.querySelector(".js-services__images-wrapper");
+
+                const wrapperStyles = window.getComputedStyle(imagesWrapper);
+                const wrapperMarginTop = parseFloat(wrapperStyles.marginTop);
+
+                imagesWrapper.style.height = `${window.innerHeight - servicesContent.offsetHeight - wrapperMarginTop}px`;
 
                 const scrollStyles = window.getComputedStyle(scroll);
                 const startValue = parseFloat(scrollStyles.paddingLeft) + imagesWrapper.offsetHeight;
@@ -44,7 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 servicesItems.forEach((item, index) => {
                     tl.to(servicesItems, {
-                        xPercent: -120 * (index + 1),
+                        xPercent: -110 * (index + 1),
                         ease: "none",
                         onUpdate: () => {
                             servicesItems.forEach((s, i) => {

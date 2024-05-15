@@ -26,10 +26,14 @@ window.addEventListener("DOMContentLoaded", function () {
     /** servicesAnimation() init */
     function servicesAnimation() {
       servicesList.forEach(function (service) {
+        var servicesContent = service.querySelector(".js-services__content");
         var scroll = service.querySelector(".js-services__scroll");
         var servicesItems = service.querySelectorAll(".js-services__item");
         var servicesImages = service.querySelectorAll(".js-services__image");
         var imagesWrapper = service.querySelector(".js-services__images-wrapper");
+        var wrapperStyles = window.getComputedStyle(imagesWrapper);
+        var wrapperMarginTop = parseFloat(wrapperStyles.marginTop);
+        imagesWrapper.style.height = "".concat(window.innerHeight - servicesContent.offsetHeight - wrapperMarginTop, "px");
         var scrollStyles = window.getComputedStyle(scroll);
         var startValue = parseFloat(scrollStyles.paddingLeft) + imagesWrapper.offsetHeight;
         var itemsArray = _toConsumableArray(Array.from(servicesItems));
@@ -50,7 +54,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
         servicesItems.forEach(function (item, index) {
           tl.to(servicesItems, {
-            xPercent: -120 * (index + 1),
+            xPercent: -110 * (index + 1),
             ease: "none",
             onUpdate: function onUpdate() {
               servicesItems.forEach(function (s, i) {
