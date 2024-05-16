@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if (!teamsList.length) return;
 
-        const gs = [];
+        const gs = new Array(teamsList.length);
 
         if (!document.querySelector(".js-hero__text")) {
             teamAnimation();
@@ -87,8 +87,6 @@ window.addEventListener("DOMContentLoaded", () => {
                             end: () => `+=${totalWidth}`,
                         },
                     });
-
-                    console.log(gs[index]);
                 }, timeout);
             });
         }
@@ -101,7 +99,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
             return itemWidth + marginRight;
         }
-
-        /** isGSAPInstance() init */
     }, 500);
 });

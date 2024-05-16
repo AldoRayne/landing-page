@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     var teamsList = document.querySelectorAll(".js-team");
     if (!teamsList.length) return;
-    var gs = [];
+    var gs = new Array(teamsList.length);
     if (!document.querySelector(".js-hero__text")) {
       teamAnimation();
       return;
@@ -91,7 +91,6 @@ window.addEventListener("DOMContentLoaded", function () {
                       }
                     }
                   });
-                  console.log(gs[index]);
                 }, timeout);
               case 4:
               case "end":
@@ -112,8 +111,6 @@ window.addEventListener("DOMContentLoaded", function () {
       var marginRight = parseFloat(itemStyles.marginRight);
       return itemWidth + marginRight;
     }
-
-    /** isGSAPInstance() init */
   }, 500);
 });
 /******/ })()
