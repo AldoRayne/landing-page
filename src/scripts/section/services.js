@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if (!servicesList.length) return;
 
-        const tl = [];
+        const tl = new Array(servicesList.length);
 
         if (!document.querySelector(".js-hero__text")) {
             servicesAnimation();
