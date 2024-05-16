@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     var servicesList = document.querySelectorAll(".js-services");
     if (!servicesList.length) return;
-    var tl = [];
+    var tl = new Array(servicesList.length);
     if (!document.querySelector(".js-hero__text")) {
       servicesAnimation();
       return;
